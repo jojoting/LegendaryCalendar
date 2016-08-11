@@ -1,15 +1,14 @@
 //
-//  ViewController.h
+//  LCCalendarCell.h
 //  LegendaryCalendar
 //
-//  Created by jojoting on 16/8/10.
+//  Created by jojoting on 16/8/11.
 //  Copyright © 2016年 jojoting. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LCCalendarCell : UICollectionViewCell
 
 
 @end
-

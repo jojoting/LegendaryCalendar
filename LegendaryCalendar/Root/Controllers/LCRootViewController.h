@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  LCRootViewController.h
 //  LegendaryCalendar
 //
 //  Created by jojoting on 16/8/10.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface LCRootViewController : UIViewController
 
 @end
-
