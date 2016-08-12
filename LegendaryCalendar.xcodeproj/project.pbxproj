@@ -22,6 +22,7 @@
 		B90F52231D5CD23D006A1511 /* LCCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52221D5CD23D006A1511 /* LCCalendarLayout.m */; };
 		B90F52261D5CD252006A1511 /* LCCalendarContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52251D5CD252006A1511 /* LCCalendarContainerView.m */; };
 		B90F522A1D5CD40C006A1511 /* LCCalendarCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52291D5CD40C006A1511 /* LCCalendarCellModel.m */; };
+		B90F522D1D5E48CE006A1511 /* NSDate+LCCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F522C1D5E48CE006A1511 /* NSDate+LCCalendarTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		B90F52251D5CD252006A1511 /* LCCalendarContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarContainerView.m; sourceTree = "<group>"; };
 		B90F52281D5CD40C006A1511 /* LCCalendarCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarCellModel.h; sourceTree = "<group>"; };
 		B90F52291D5CD40C006A1511 /* LCCalendarCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarCellModel.m; sourceTree = "<group>"; };
+		B90F522C1D5E48CE006A1511 /* NSDate+LCCalendarTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LCCalendarTests.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				B90F51AF1D5B7150006A1511 /* LegendaryCalendarTests.m */,
 				B90F51B11D5B7150006A1511 /* Info.plist */,
+				B90F522C1D5E48CE006A1511 /* NSDate+LCCalendarTests.m */,
 			);
 			path = LegendaryCalendarTests;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B90F51B01D5B7150006A1511 /* LegendaryCalendarTests.m in Sources */,
+				B90F522D1D5E48CE006A1511 /* NSDate+LCCalendarTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

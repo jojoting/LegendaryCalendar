@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface LCCalendarCellModel : NSObject
 
-@property (nonatomic, copy) NSString              *dateStr;
+@property (nonatomic, copy) NSAttributedString    *dateStr;
 @property (nonatomic, copy) NSAttributedString    *chineseDateStr;
+@property (nonatomic, strong) UIColor             *backgroundColor;
 
 + (instancetype)cellModelWithDate:(NSDate *)date;
 

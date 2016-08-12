@@ -9,10 +9,7 @@
 #import "LCCalendarCellModel.h"
 #import "NSDate+LCCalendar.h"
 
-@interface LCCalendarCellModel (){
-    NSDate *_date;
-}
-
+@interface LCCalendarCellModel ()
 @end
 
 @implementation LCCalendarCellModel
@@ -24,14 +21,13 @@
 - (instancetype)initWithDate:(NSDate *)date{
     self = [super init];
     if (self) {
-        _date = date;
-        [self setUp];
+        [self setUpWithDate:date];
     }
     return self;
 }
 
-- (void)setUp{
-    self.dateStr = [NSString stringWithFormat:@"%ld", [_date lc_day]];
+- (void)setUpWithDate:(NSDate *)date{
+    
 }
 
 @end
