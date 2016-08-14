@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class LCCalendarCellModel;
+
 @interface LCCalendarCell : UICollectionViewCell
 
+- (void)setCellModel:(LCCalendarCellModel *)cellModel;
 
 @end

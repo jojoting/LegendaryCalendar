@@ -33,6 +33,27 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
+- (void)testLc_allDays {
+    NSArray *allDays = [[NSDate date] lc_currentDates];
+    NSLog(@"all days:%@",allDays);
+}
+
+- (void)testLc_weekDay {
+    NSLog(@"week day:%ld",[[NSDate date] lc_weekDay]);
+}
+
+- (void)testLc_lastMonth {
+    XCTAssertEqual([[NSDate date] lc_lastMonth], 7, @"获取上个月错误");
+}
+
+- (void)testLc_nextMonth {
+    XCTAssertEqual([[NSDate date] lc_nextMonth], 9, @"获取下个月错误");
+}
+
+- (void)testLc_currentMonth {
+    XCTAssertEqual([[NSDate date] lc_currentMonth], 8, @"获取当月月错误");
+}
+
 - (void)testLc_chineseDay {
     NSCalendar *greoCal = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
     [greoCal setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
@@ -67,6 +88,16 @@
     testDate = [greoCal dateFromComponents:testGreoComp];
     testStr = [testDate lc_chineseDay];
     XCTAssertTrue([testStr isEqualToString:@"立秋"] ,@"农历气日获取错误");
+    
+    //测试判断节日
+    XCTAssertTrue([testDate lc_isFestival] ,@"判断是否节日错误");
+
+    //测试判断是否当前月
+    XCTAssertTrue([testDate lc_isCurrentMonth] ,@"判断是否当前月错误");
+    testGreoComp.day = 7;
+    testGreoComp.month = 7;
+    testDate = [greoCal dateFromComponents:testGreoComp];
+    XCTAssertFalse([testDate lc_isCurrentMonth] ,@"判断是否当前月错误");
 
 }
 @end

@@ -1,5 +1,5 @@
 //
-//  LCCalendarView.h
+//  LCCalendarContentView.h
 //  LegendaryCalendar
 //
 //  Created by jojoting on 16/8/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LCCalendarView : UIScrollView
+@interface LCCalendarContentView : UIView
 
 - (void)loadNextMonth;
 - (void)loadPreMonth;

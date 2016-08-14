@@ -10,11 +10,27 @@
 
 @interface NSDate (LCCalendar)
 
+- (NSArray<NSDate *> *)lc_currentDates;
+- (NSArray<NSDate *> *)lc_preMonthDates;
+- (NSArray<NSDate *> *)lc_nextMonthDates;
+
 - (NSUInteger )lc_day;
 - (NSUInteger )lc_daysOfMonth;
 - (NSUInteger )lc_weekDay;
+- (NSUInteger )lc_lastMonth;
+- (NSUInteger )lc_nextMonth;
+- (NSUInteger )lc_currentMonth;
+- (NSUInteger )lc_year;
+
 - (NSDate *)lc_firstDayOfMonth;
 - (NSDate *)lc_lastDayOfMonth;
+- (NSDate *)lc_dateOfNextMonth;
+- (NSDate *)lc_dateOfPreMonth;
+
 - (NSString *)lc_chineseDay;
+
+- (BOOL)lc_isFestival;
+- (BOOL)lc_isCurrentMonth;
+- (BOOL)lc_isCurrentDay;
 
 @end

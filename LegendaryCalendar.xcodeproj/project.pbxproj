@@ -17,12 +17,17 @@
 		B90F52071D5CD078006A1511 /* LCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52031D5CD078006A1511 /* LCRootViewController.m */; };
 		B90F520A1D5CD07F006A1511 /* LCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52091D5CD07F006A1511 /* LCAppDelegate.m */; };
 		B90F52141D5CD0E3006A1511 /* NSDate+LCCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52131D5CD0E3006A1511 /* NSDate+LCCalendar.m */; };
-		B90F521D1D5CD1C7006A1511 /* LCCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F521C1D5CD1C7006A1511 /* LCCalendarView.m */; };
 		B90F52201D5CD1F0006A1511 /* LCCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F521F1D5CD1F0006A1511 /* LCCalendarCell.m */; };
-		B90F52231D5CD23D006A1511 /* LCCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52221D5CD23D006A1511 /* LCCalendarLayout.m */; };
-		B90F52261D5CD252006A1511 /* LCCalendarContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52251D5CD252006A1511 /* LCCalendarContainerView.m */; };
 		B90F522A1D5CD40C006A1511 /* LCCalendarCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52291D5CD40C006A1511 /* LCCalendarCellModel.m */; };
 		B90F522D1D5E48CE006A1511 /* NSDate+LCCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F522C1D5E48CE006A1511 /* NSDate+LCCalendarTests.m */; };
+		B90F52351D5FA629006A1511 /* LCScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52341D5FA629006A1511 /* LCScrollView.m */; };
+		B90F52381D606D95006A1511 /* LCCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52371D606D95006A1511 /* LCCalendarViewController.m */; };
+		B90F523B1D606DB9006A1511 /* LCCalendarTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F523A1D606DB9006A1511 /* LCCalendarTitleView.m */; };
+		B90F52411D606ECB006A1511 /* LCCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52401D606ECB006A1511 /* LCCalendarWeekView.m */; };
+		B90F52441D607CEF006A1511 /* LCCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52431D607CEF006A1511 /* LCCalendarView.m */; };
+		B90F52471D607D00006A1511 /* LCCalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52461D607D00006A1511 /* LCCalendarModel.m */; };
+		B90F524A1D60C1B3006A1511 /* LCCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52491D60C1B3006A1511 /* LCCalendarContentView.m */; };
+		B90F52511D60C5C5006A1511 /* LCCalendarHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52501D60C5C5006A1511 /* LCCalendarHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,17 +69,28 @@
 		B90F52091D5CD07F006A1511 /* LCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCAppDelegate.m; sourceTree = "<group>"; };
 		B90F52121D5CD0E3006A1511 /* NSDate+LCCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LCCalendar.h"; sourceTree = "<group>"; };
 		B90F52131D5CD0E3006A1511 /* NSDate+LCCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LCCalendar.m"; sourceTree = "<group>"; };
-		B90F521B1D5CD1C7006A1511 /* LCCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarView.h; sourceTree = "<group>"; };
-		B90F521C1D5CD1C7006A1511 /* LCCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarView.m; sourceTree = "<group>"; };
 		B90F521E1D5CD1F0006A1511 /* LCCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarCell.h; sourceTree = "<group>"; };
 		B90F521F1D5CD1F0006A1511 /* LCCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarCell.m; sourceTree = "<group>"; };
-		B90F52211D5CD23D006A1511 /* LCCalendarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarLayout.h; sourceTree = "<group>"; };
-		B90F52221D5CD23D006A1511 /* LCCalendarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarLayout.m; sourceTree = "<group>"; };
-		B90F52241D5CD252006A1511 /* LCCalendarContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarContainerView.h; sourceTree = "<group>"; };
-		B90F52251D5CD252006A1511 /* LCCalendarContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarContainerView.m; sourceTree = "<group>"; };
 		B90F52281D5CD40C006A1511 /* LCCalendarCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarCellModel.h; sourceTree = "<group>"; };
 		B90F52291D5CD40C006A1511 /* LCCalendarCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarCellModel.m; sourceTree = "<group>"; };
 		B90F522C1D5E48CE006A1511 /* NSDate+LCCalendarTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LCCalendarTests.m"; sourceTree = "<group>"; };
+		B90F52311D5F0C0F006A1511 /* LCPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPrefix.pch; sourceTree = "<group>"; };
+		B90F52331D5FA629006A1511 /* LCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCScrollView.h; sourceTree = "<group>"; };
+		B90F52341D5FA629006A1511 /* LCScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCScrollView.m; sourceTree = "<group>"; };
+		B90F52361D606D95006A1511 /* LCCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarViewController.h; sourceTree = "<group>"; };
+		B90F52371D606D95006A1511 /* LCCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarViewController.m; sourceTree = "<group>"; };
+		B90F52391D606DB9006A1511 /* LCCalendarTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarTitleView.h; sourceTree = "<group>"; };
+		B90F523A1D606DB9006A1511 /* LCCalendarTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarTitleView.m; sourceTree = "<group>"; };
+		B90F523F1D606ECB006A1511 /* LCCalendarWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarWeekView.h; sourceTree = "<group>"; };
+		B90F52401D606ECB006A1511 /* LCCalendarWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarWeekView.m; sourceTree = "<group>"; };
+		B90F52421D607CEF006A1511 /* LCCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarView.h; sourceTree = "<group>"; };
+		B90F52431D607CEF006A1511 /* LCCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarView.m; sourceTree = "<group>"; };
+		B90F52451D607D00006A1511 /* LCCalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarModel.h; sourceTree = "<group>"; };
+		B90F52461D607D00006A1511 /* LCCalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarModel.m; sourceTree = "<group>"; };
+		B90F52481D60C1B3006A1511 /* LCCalendarContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarContentView.h; sourceTree = "<group>"; };
+		B90F52491D60C1B3006A1511 /* LCCalendarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarContentView.m; sourceTree = "<group>"; };
+		B90F524F1D60C5C5006A1511 /* LCCalendarHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarHandler.h; sourceTree = "<group>"; };
+		B90F52501D60C5C5006A1511 /* LCCalendarHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +141,7 @@
 		B90F51941D5B7150006A1511 /* LegendaryCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				B90F522E1D5F0B7F006A1511 /* Public */,
 				B90F52081D5CD07F006A1511 /* LCAppDelegate.h */,
 				B90F52091D5CD07F006A1511 /* LCAppDelegate.m */,
 				B90F51F01D5CCF71006A1511 /* Root */,
@@ -133,6 +150,7 @@
 				B90F51A31D5B7150006A1511 /* LaunchScreen.storyboard */,
 				B90F51A61D5B7150006A1511 /* Info.plist */,
 				B90F51951D5B7150006A1511 /* Supporting Files */,
+				B90F52311D5F0C0F006A1511 /* LCPrefix.pch */,
 			);
 			path = LegendaryCalendar;
 			sourceTree = "<group>";
@@ -167,6 +185,7 @@
 		B90F51EF1D5CCF22006A1511 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				B90F524B1D60C38A006A1511 /* Classes */,
 				B90F52271D5CD3EA006A1511 /* ViewModels */,
 				B90F520B1D5CD08E006A1511 /* Catagories */,
 				B90F520C1D5CD08E006A1511 /* Controllers */,
@@ -217,6 +236,8 @@
 		B90F520C1D5CD08E006A1511 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B90F52361D606D95006A1511 /* LCCalendarViewController.h */,
+				B90F52371D606D95006A1511 /* LCCalendarViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +245,8 @@
 		B90F520D1D5CD08E006A1511 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B90F52451D607D00006A1511 /* LCCalendarModel.h */,
+				B90F52461D607D00006A1511 /* LCCalendarModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,14 +254,16 @@
 		B90F520E1D5CD08E006A1511 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B90F521B1D5CD1C7006A1511 /* LCCalendarView.h */,
-				B90F521C1D5CD1C7006A1511 /* LCCalendarView.m */,
 				B90F521E1D5CD1F0006A1511 /* LCCalendarCell.h */,
 				B90F521F1D5CD1F0006A1511 /* LCCalendarCell.m */,
-				B90F52211D5CD23D006A1511 /* LCCalendarLayout.h */,
-				B90F52221D5CD23D006A1511 /* LCCalendarLayout.m */,
-				B90F52241D5CD252006A1511 /* LCCalendarContainerView.h */,
-				B90F52251D5CD252006A1511 /* LCCalendarContainerView.m */,
+				B90F52391D606DB9006A1511 /* LCCalendarTitleView.h */,
+				B90F523A1D606DB9006A1511 /* LCCalendarTitleView.m */,
+				B90F523F1D606ECB006A1511 /* LCCalendarWeekView.h */,
+				B90F52401D606ECB006A1511 /* LCCalendarWeekView.m */,
+				B90F52421D607CEF006A1511 /* LCCalendarView.h */,
+				B90F52431D607CEF006A1511 /* LCCalendarView.m */,
+				B90F52481D60C1B3006A1511 /* LCCalendarContentView.h */,
+				B90F52491D60C1B3006A1511 /* LCCalendarContentView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +276,32 @@
 			);
 			name = ViewModels;
 			path = Models/ViewModels;
+			sourceTree = "<group>";
+		};
+		B90F522E1D5F0B7F006A1511 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				B90F52321D5FA614006A1511 /* LCScrollView */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		B90F52321D5FA614006A1511 /* LCScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				B90F52331D5FA629006A1511 /* LCScrollView.h */,
+				B90F52341D5FA629006A1511 /* LCScrollView.m */,
+			);
+			path = LCScrollView;
+			sourceTree = "<group>";
+		};
+		B90F524B1D60C38A006A1511 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B90F524F1D60C5C5006A1511 /* LCCalendarHandler.h */,
+				B90F52501D60C5C5006A1511 /* LCCalendarHandler.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,16 +434,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B90F51971D5B7150006A1511 /* main.m in Sources */,
+				B90F52381D606D95006A1511 /* LCCalendarViewController.m in Sources */,
 				B90F52061D5CD078006A1511 /* LCRootTabBarController.m in Sources */,
-				B90F52231D5CD23D006A1511 /* LCCalendarLayout.m in Sources */,
+				B90F52351D5FA629006A1511 /* LCScrollView.m in Sources */,
+				B90F52441D607CEF006A1511 /* LCCalendarView.m in Sources */,
+				B90F52511D60C5C5006A1511 /* LCCalendarHandler.m in Sources */,
+				B90F524A1D60C1B3006A1511 /* LCCalendarContentView.m in Sources */,
 				B90F52071D5CD078006A1511 /* LCRootViewController.m in Sources */,
+				B90F52471D607D00006A1511 /* LCCalendarModel.m in Sources */,
 				B90F522A1D5CD40C006A1511 /* LCCalendarCellModel.m in Sources */,
 				B90F52051D5CD078006A1511 /* LCRootNavigationController.m in Sources */,
 				B90F52201D5CD1F0006A1511 /* LCCalendarCell.m in Sources */,
 				B90F520A1D5CD07F006A1511 /* LCAppDelegate.m in Sources */,
 				B90F52141D5CD0E3006A1511 /* NSDate+LCCalendar.m in Sources */,
-				B90F521D1D5CD1C7006A1511 /* LCCalendarView.m in Sources */,
-				B90F52261D5CD252006A1511 /* LCCalendarContainerView.m in Sources */,
+				B90F523B1D606DB9006A1511 /* LCCalendarTitleView.m in Sources */,
+				B90F52411D606ECB006A1511 /* LCCalendarWeekView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +582,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LegendaryCalendar/LCPrefix.pch";
 				INFOPLIST_FILE = LegendaryCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jojo.LegendaryCalendar;
@@ -537,6 +595,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LegendaryCalendar/LCPrefix.pch";
 				INFOPLIST_FILE = LegendaryCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jojo.LegendaryCalendar;
@@ -609,6 +669,7 @@
 				B90F51C11D5B7150006A1511 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B90F51C21D5B7150006A1511 /* Build configuration list for PBXNativeTarget "LegendaryCalendarTests" */ = {
 			isa = XCConfigurationList;
@@ -617,6 +678,7 @@
 				B90F51C41D5B7150006A1511 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B90F51C51D5B7150006A1511 /* Build configuration list for PBXNativeTarget "LegendaryCalendarUITests" */ = {
 			isa = XCConfigurationList;
@@ -625,6 +687,7 @@
 				B90F51C71D5B7150006A1511 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

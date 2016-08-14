@@ -175,6 +175,82 @@ static int gLunarHolDay[]=
 
 @implementation NSDate (LCCalendar)
 
+
+- (NSArray<NSDate *> *)lc_currentDates{
+    NSCalendar *calendar= [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self];
+    NSUInteger daysOfMonth = [self lc_daysOfMonth];
+    NSMutableArray *allDays = [NSMutableArray arrayWithCapacity:daysOfMonth];
+    for (NSInteger i = 1; i <= daysOfMonth; i ++) {
+        comp.day = i;
+        [allDays addObject:[calendar dateFromComponents:comp]];
+    }
+    return [allDays copy];
+}
+
+- (NSArray<NSDate *> *)lc_preMonthDates{
+    NSCalendar *calendar= [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self];
+    
+    //获取上个月最后一天
+    if (comp.month == 1) {
+        comp.year -= 1;
+        comp.month = 12;
+    } else {
+        comp.month -= 1;
+    }
+    
+    NSDate *lastDateOfPreMonth = [[calendar dateFromComponents:comp] lc_lastDayOfMonth];
+    NSUInteger  lastDateWeekDay = [lastDateOfPreMonth lc_weekDay];
+    NSUInteger  daysOfPreMonth = lastDateWeekDay;
+    NSUInteger  lastDay = [[lastDateOfPreMonth lc_lastDayOfMonth] lc_day];
+    
+    NSMutableArray *allDays = [NSMutableArray arrayWithCapacity:daysOfPreMonth];
+    for (NSInteger i = 1; i <= daysOfPreMonth; i ++) {
+        comp.day = lastDay - (daysOfPreMonth - i);
+        [allDays addObject:[calendar dateFromComponents:comp]];
+    }
+    
+    return [allDays copy];
+}
+
+- (NSArray<NSDate *> *)lc_nextMonthDates{
+    NSCalendar *calendar= [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self];
+    
+    //获取下个月第一天
+    if (comp.month == 12) {
+        comp.year += 1;
+        comp.month = 1;
+    } else {
+        comp.month += 1;
+    }
+    comp.day = 1;
+    
+    NSDate *firstDateOfNextMonth = [calendar dateFromComponents:comp];
+    NSUInteger  firstDateWeekDay = [firstDateOfNextMonth lc_weekDay];
+    NSUInteger  daysOfNextMonth = 8 - firstDateWeekDay;
+    
+    NSMutableArray *allDays = [NSMutableArray arrayWithCapacity:daysOfNextMonth];
+    for (NSInteger i = 1; i <= daysOfNextMonth; i ++) {
+        comp.day = i;
+        [allDays addObject:[calendar dateFromComponents:comp]];
+    }
+    
+    return [allDays copy];
+}
+
+- (NSUInteger )lc_currentMonth{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone localTimeZone];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitMonth fromDate:self];
+    return comp.month;
+
+}
+
 - (NSUInteger )lc_day{
     NSCalendar *calendar= [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     calendar.timeZone = [NSTimeZone localTimeZone];
@@ -195,6 +271,33 @@ static int gLunarHolDay[]=
     return comp.weekday;
 }
 
+- (NSUInteger )lc_lastMonth{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone localTimeZone];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitMonth fromDate:self];
+    if (comp.month == 1) {
+        return 12;
+    }
+    return comp.month - 1;
+}
+
+- (NSUInteger )lc_nextMonth{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone localTimeZone];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitMonth fromDate:self];
+    if (comp.month == 12) {
+        return 1;
+    }
+    return comp.month + 1;
+}
+
+- (NSUInteger )lc_year{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone localTimeZone];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitYear fromDate:self];
+    return comp.year;
+}
+
 - (NSDate *)lc_firstDayOfMonth{
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     calendar.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
@@ -211,6 +314,27 @@ static int gLunarHolDay[]=
     return [calendar dateFromComponents:comp];
 }
 
+- (NSDate *)lc_dateOfNextMonth{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:self];
+    if (comp.month == 12) {
+        comp.month = 1;
+        comp.year += 1;
+    }
+    return [calendar dateFromComponents:comp];
+}
+
+- (NSDate *)lc_dateOfPreMonth{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:self];
+    if (comp.month == 1) {
+        comp.month = 12;
+        comp.year -= 1;
+    }
+    return [calendar dateFromComponents:comp];
+}
 
 - (NSString *)lc_chineseDay{
     NSCalendar *chineseCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierChinese];
@@ -266,5 +390,35 @@ static int gLunarHolDay[]=
     }
     
     return dayStr;
+}
+
+- (BOOL )lc_isFestival{
+    NSString *dayStr = [self lc_chineseDay];
+    if ([ChineseDays containsObject:dayStr]) {
+        return NO;
+    }
+    return YES;
+}
+
+- (BOOL)lc_isCurrentMonth{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:self];
+    NSDateComponents *currentComp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+    if (currentComp.year == comp.year && currentComp.month == comp.month) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)lc_isCurrentDay{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone localTimeZone];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:self];
+    NSDateComponents *currentComp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+    if (currentComp.year == comp.year && currentComp.month == comp.month && currentComp.day == comp.day) {
+        return YES;
+    }
+    return NO;
 }
 @end

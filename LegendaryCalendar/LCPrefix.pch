@@ -1,0 +1,24 @@
+//
+//  LCPrefix.pch
+//  LegendaryCalendar
+//
+//  Created by jojoting on 16/8/13.
+//  Copyright © 2016年 jojoting. All rights reserved.
+//
+
+#ifndef LCPrefix_pch
+#define LCPrefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//color
+#define MAIN_COLOR     [UIColor colorWithRed:233.f/255.f green:135.f/255.f blue:39.f/255.f alpha:1.0]
+#define COLOR_HEX(hexValue,a) [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:a]
+
+#define WEAKSELF    __weak __typeof(self) weakSelf = self;
+#define STRONGSELF  __strong __typeof(weakSelf) strongSelf = weakSelf;
+#define SCREEN_W    [UIScreen mainScreen].bounds.size.width
+#define SCREEN_H    [UIScreen mainScreen].bounds.size.height
+
+#endif /* LCPrefix_pch */
