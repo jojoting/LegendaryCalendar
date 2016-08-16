@@ -10,7 +10,6 @@
 
 @interface LCCalendarContentView : UIView
 
-- (void)loadNextMonth;
-- (void)loadPreMonth;
+- (void)loadWithMonthsToCurrrentMonth:(NSInteger )monthsToCurrrentMonth;
 
 @end

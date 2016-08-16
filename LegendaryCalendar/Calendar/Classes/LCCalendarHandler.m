@@ -26,39 +26,13 @@
     return self;
 }
 #pragma mark - public
-- (void)updateDataWithType:(LCCalendarUpdateType )type CompletionBlock:(LCUpdateCompletionBlock )block{
-    switch (type) {
-        case LCCalendarUpdateTypePreMonth:{
-            [self updatePreMonthDataWithCompletionBlock:block];
-        }
-            break;
-        case LCCalendarUpdateTypeNextMonth:{
-            [self updateNextMonthDataWithCompletionBlock:block];
-        }
-        case LCCalendarUpdateTypeCurrentMonth:{
-            [self updateCurrentMonthDataWithCompletionBlock:block];
-        }
-        default:
-            break;
-    }
+- (void)updateDataWithMonthsToCurrrentMonth:(NSInteger )monthsToCurrrentMonth CompletionBlock:(LCUpdateCompletionBlock )block{
+    NSDate *date = [[NSDate date] lc_dateOfMonthsToCurrentMonth:monthsToCurrrentMonth];
+    [self createModelWithDate:date completionBlock:block];
 }
-
 #pragma mark - private
-- (void)updateCurrentMonthDataWithCompletionBlock:(LCUpdateCompletionBlock )block{
-    [self createModelWithDates:[NSDate date] completionBlock:block];
-}
 
-- (void)updateNextMonthDataWithCompletionBlock:(LCUpdateCompletionBlock )block{
-    NSDate *dateOfNextMonth = [[NSDate date] lc_dateOfNextMonth];
-    [self createModelWithDates:dateOfNextMonth completionBlock:block];
-}
-
-- (void)updatePreMonthDataWithCompletionBlock:(LCUpdateCompletionBlock )block{
-    NSDate *dateOfPreMonth = [[NSDate date] lc_dateOfPreMonth];
-    [self createModelWithDates:dateOfPreMonth completionBlock:block];
-}
-
-- (void)createModelWithDates:(NSDate *)date completionBlock:(LCUpdateCompletionBlock )block{
+- (void)createModelWithDate:(NSDate *)date completionBlock:(LCUpdateCompletionBlock )block{
     LCCalendarModel *model = [[LCCalendarModel alloc] init];
     model.preMonth_days = [date lc_preMonthDates];
     model.currentMonth_days = [date lc_currentDates];
@@ -88,7 +62,7 @@
     if (!cell) {
         cell = [[LCCalendarCell alloc] init];
     }
-    LCCalendarCellModel *cellModel = [LCCalendarCellModel cellModelWithDate:_allDates[indexPath.row]];
+    LCCalendarCellModel *cellModel = [LCCalendarCellModel cellModelWithDate:_allDates[indexPath.row] month:[_allDates[15] lc_currentMonth]];
     [cell setCellModel:cellModel];
 
     return cell;

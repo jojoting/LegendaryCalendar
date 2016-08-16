@@ -24,13 +24,13 @@
 
 - (NSDate *)lc_firstDayOfMonth;
 - (NSDate *)lc_lastDayOfMonth;
-- (NSDate *)lc_dateOfNextMonth;
-- (NSDate *)lc_dateOfPreMonth;
+- (NSDate *)lc_dateOfMonthsToCurrentMonth:(NSInteger )monthsToCurrentMonth;
 
 - (NSString *)lc_chineseDay;
 
 - (BOOL)lc_isFestival;
 - (BOOL)lc_isCurrentMonth;
+- (BOOL)lc_isMonth:(NSUInteger )month;
 - (BOOL)lc_isCurrentDay;
 
 @end

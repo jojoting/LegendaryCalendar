@@ -12,17 +12,12 @@
 @class LCCalendarCellModel;
 @class LCCalendarModel;
 
-typedef NS_ENUM(NSInteger, LCCalendarUpdateType) {
-    LCCalendarUpdateTypeCurrentMonth = -1,
-    LCCalendarUpdateTypePreMonth = 0,
-    LCCalendarUpdateTypeNextMonth
-};
 typedef void(^LCUpdateCompletionBlock)(LCCalendarModel *model);
 
 @interface LCCalendarHandler : NSObject <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, copy) NSString                    *cellIdentifier;
 
-- (void)updateDataWithType:(LCCalendarUpdateType )type CompletionBlock:(LCUpdateCompletionBlock )block;
+- (void)updateDataWithMonthsToCurrrentMonth:(NSInteger )monthsToCurrrentMonth CompletionBlock:(LCUpdateCompletionBlock )block;
 
 @end

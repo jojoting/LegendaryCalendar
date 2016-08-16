@@ -20,20 +20,20 @@ typedef NS_ENUM(NSInteger, LCCalendarCellType) {
 
 @implementation LCCalendarCellModel
 
-+ (instancetype)cellModelWithDate:(NSDate *)date{
-    return [[self alloc] initWithDate:date];
++ (instancetype)cellModelWithDate:(NSDate *)date month:(NSUInteger )month {
+    return [[self alloc] initWithDate:date month:month];
 }
 
-- (instancetype)initWithDate:(NSDate *)date{
+- (instancetype)initWithDate:(NSDate *)date month:(NSUInteger )month {
     self = [super init];
     if (self) {
-        [self setUpWithDate:date];
+        [self setUpWithDate:date month:month];
     }
     return self;
 }
 
-- (void)setUpWithDate:(NSDate *)date{
-    if ([date lc_isCurrentMonth]) {
+- (void)setUpWithDate:(NSDate *)date month:(NSUInteger )month {
+    if ([date lc_isMonth:month]) {
         [self setUpDateWithCurrentMonth:date];
     } else {
         [self setUpDateNextOrLastMonth:date];

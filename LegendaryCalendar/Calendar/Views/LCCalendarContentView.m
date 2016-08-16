@@ -29,26 +29,19 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
 @implementation LCCalendarContentView
 
 #pragma mark - public
-- (void)loadCurrentMonth{
-    [self updateDataWithType:LCCalendarUpdateTypeCurrentMonth];
-}
-- (void)loadNextMonth{
-    [self updateDataWithType:LCCalendarUpdateTypeNextMonth];
-}
-- (void)loadPreMonth{
-    [self updateDataWithType:LCCalendarUpdateTypePreMonth];
-}
 
+- (void)loadWithMonthsToCurrrentMonth:(NSInteger )monthsToCurrrentMonth{
+    [self updateDataWithMonths:monthsToCurrrentMonth];
+}
 
 #pragma mark - private methods
-- (void)updateDataWithType:(LCCalendarUpdateType )type{
+- (void)updateDataWithMonths:(NSInteger )months{
     WEAKSELF
-    [self.handler updateDataWithType:type CompletionBlock:^(LCCalendarModel *model) {
+    [self.handler updateDataWithMonthsToCurrrentMonth:months CompletionBlock:^(LCCalendarModel *model) {
         STRONGSELF
         [strongSelf.titleView updateWithYear:model.currentYear month:model.currentMonth];
         [strongSelf.collectionView reloadData];
     }];
-
 }
 #pragma mark - init
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -65,7 +58,7 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
     [self addSubview:self.weekView];
     [self addSubview:self.collectionView];
     
-    [self loadCurrentMonth];
+    [self loadWithMonthsToCurrrentMonth:0];
 }
 
 #pragma mark - layout

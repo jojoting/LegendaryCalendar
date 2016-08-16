@@ -7,9 +7,11 @@
 //
 
 #import "LCCalendarViewController.h"
-#import "LCCalendarContentView.h"
+#import "LCCalendarView.h"
 
-@interface LCCalendarViewController ()
+@interface LCCalendarViewController () <UIScrollViewDelegate> {
+    LCCalendarView  *_calendarView;
+}
 
 @end
 
@@ -18,9 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    LCCalendarContentView *contentView = [[LCCalendarContentView alloc] initWithFrame:self.view.frame];
-    
-    [self.view addSubview:contentView];
+    _calendarView = [[LCCalendarView alloc] initWithFrame:self.view.frame];
+//    _calendarView.delegate = self;
+    [self.view addSubview:_calendarView];
     
     // Do any additional setup after loading the view.
 }
@@ -30,6 +32,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UIScrollView delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
+}
 /*
 #pragma mark - Navigation
 
