@@ -31,6 +31,7 @@ const NSUInteger    availableEndYear = 2100;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.calendarView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectMonthAndYear:) name:LCCalendarSelectMonthAndYearNotify object:nil];
     
@@ -60,7 +61,7 @@ const NSUInteger    availableEndYear = 2100;
                       ];
     
     WEAKSELF
-    LCActionPicker *actionPicker = [LCActionPicker actionPickerWithTitle:@"" datas:@[availableYears,availableMonths] comfirmBlock:^(LCActionPicker *picker, NSArray *values) {
+    LCActionPicker *actionPicker = [LCActionPicker actionPickerWithTitle:@"选择年月" datas:@[availableYears,availableMonths] comfirmBlock:^(LCActionPicker *picker, NSArray *values) {
         [picker dismiss:YES];
         [weakSelf.calendarView loadMonth:[values[1] integerValue] year:[values[0] integerValue]];
     } cancelBlock:^(LCActionPicker *picker) {
@@ -72,7 +73,7 @@ const NSUInteger    availableEndYear = 2100;
 #pragma mark - getter
 - (LCCalendarView *)calendarView{
     if (!_calendarView) {
-        _calendarView = [[LCCalendarView alloc] initWithFrame:self.view.frame];
+        _calendarView = [[LCCalendarView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_W, SCREEN_H - 20)];
         //    _calendarView.delegate = self;
     }
     return _calendarView;

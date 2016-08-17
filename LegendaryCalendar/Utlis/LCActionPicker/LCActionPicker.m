@@ -12,6 +12,7 @@ const CGFloat   kActionPickerToolBarHeight = 40;
 const CGFloat   kActionPickerHeight = 220;
 const CGFloat   kActionPickerAnimationDuration = 0.44;
 const CGFloat   kActionPickerBackgroundViewAlpha = 0.4;
+const CGFloat   kActionPickerRowHeight = 30.f;
 
 @interface LCActionPicker () <UIPickerViewDelegate, UIPickerViewDataSource>
 
@@ -114,11 +115,13 @@ const CGFloat   kActionPickerBackgroundViewAlpha = 0.4;
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.toolBar];
     [self addSubview:self.picker];
+    
+    [self layoutIfNeeded];
 }
 
 - (void)layoutSubviews{
-    self.toolBar.frame = CGRectMake(0, 0, self.frame.size.width, kActionPickerToolBarHeight);
-    self.picker.frame = CGRectMake(0, kActionPickerToolBarHeight, self.frame.size.width, kActionPickerHeight - kActionPickerToolBarHeight);
+    self.toolBar.frame = CGRectMake(0, 0, SCREEN_W, kActionPickerToolBarHeight);
+    self.picker.frame = CGRectMake(0, kActionPickerToolBarHeight, SCREEN_W, kActionPickerHeight - kActionPickerToolBarHeight);
 }
 #pragma mark - UIPickerViewDatasource,UIPickerViewDelegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -132,18 +135,27 @@ const CGFloat   kActionPickerBackgroundViewAlpha = 0.4;
 
 // 每列宽度
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
-    return self.frame.size.width / _datas.count;
+    CGFloat width = SCREEN_W / _datas.count;
+    return width;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
-    return 30;
+    return kActionPickerRowHeight;
 }
 
-- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return [NSString stringWithFormat:@"%@",_datas[component][row]];
-}
-//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+//- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+//    return [NSString stringWithFormat:@"%@",_datas[component][row]];
 //}
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 0, pickerView.frame.size.width / _datas.count, kActionPickerRowHeight);
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text =  [NSString stringWithFormat:@"%@",_datas[component][row]];
+    label.font = [UIFont systemFontOfSize:12.f];
+
+//    label.layer.borderWidth = 1.f;
+    return label;
+}
 
 // 返回选中的行
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -155,11 +167,10 @@ const CGFloat   kActionPickerBackgroundViewAlpha = 0.4;
 - (UIToolbar *)toolBar{
     if (!_toolBar) {
         UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction:)];
-        leftBarButton.tintColor = MAIN_COLOR;
-        
+//        leftBarButton.tintColor = MAIN_COLOR;
         
         UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(confirmAction:)];
-        rightBarButton.tintColor = MAIN_COLOR;
+//        rightBarButton.tintColor = MAIN_COLOR;
         
         UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
         UIBarButtonItem *fixedSpaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
@@ -178,6 +189,7 @@ const CGFloat   kActionPickerBackgroundViewAlpha = 0.4;
         _picker.showsSelectionIndicator=YES;
         _picker.dataSource = self;
         _picker.delegate = self;
+        _picker.backgroundColor = [UIColor clearColor];
     }
     return _picker;
 }
