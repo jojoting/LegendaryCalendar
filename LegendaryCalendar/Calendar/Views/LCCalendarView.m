@@ -13,6 +13,7 @@
 const int maximum_content_views = 3;
 
 @interface LCCalendarView () <UIScrollViewDelegate> {
+    NSDate                  *_currentDisplayDate;
     UIScrollView            *_scrollView;
     NSMutableArray          *_contentViews;
     CGFloat                  _contentViewWidth;
@@ -43,11 +44,12 @@ const int maximum_content_views = 3;
         LCCalendarContentView *contentView = [[LCCalendarContentView alloc] initWithFrame:CGRectMake(i * self.frame.size.width, 0, self.frame.size.width, self.frame.size.height)];
         contentView.tag = i - 1; //tag为视图展示月份与当前月份之差
         [contentView loadWithMonthsToCurrrentMonth:contentView.tag];
+
         [_scrollView addSubview:contentView];
-        
         [_contentViews addObject:contentView];
     }
     
+    _currentDisplayDate = [[NSDate date] lc_dateOfMonthsToCurrentMonth:((LCCalendarView *)_contentViews[1]).tag];
     [_scrollView setContentOffset:CGPointMake(self.frame.size.width, 0) animated:NO];
     [self addSubview:_scrollView];
 }
@@ -58,6 +60,7 @@ const int maximum_content_views = 3;
         contentView.tag += 1;
         [contentView loadWithMonthsToCurrrentMonth:contentView.tag];
     }
+    _currentDisplayDate = [[NSDate date] lc_dateOfMonthsToCurrentMonth:((LCCalendarView *)_contentViews[1]).tag];
     [_scrollView setContentOffset:CGPointMake(self.frame.size.width, 0) animated:NO];
     
 }
@@ -66,13 +69,23 @@ const int maximum_content_views = 3;
         contentView.tag -= 1;
         [contentView loadWithMonthsToCurrrentMonth:contentView.tag];
     }
+    _currentDisplayDate = [[NSDate date] lc_dateOfMonthsToCurrentMonth:((LCCalendarView *)_contentViews[1]).tag];
     [_scrollView setContentOffset:CGPointMake(self.frame.size.width, 0) animated:NO];
+}
 
+- (void)loadMonth:(NSInteger )month year:(NSInteger )year{
+    NSInteger monthsToCurrentDisplayDate = [_currentDisplayDate lc_monthsToMonth:month year:year];
+    for (LCCalendarContentView *contentView in _contentViews) {
+        contentView.tag += monthsToCurrentDisplayDate;
+        [contentView loadWithMonthsToCurrrentMonth:contentView.tag];
+    }
+    _currentDisplayDate = [[NSDate date] lc_dateOfMonth:month year:year];
+    [_scrollView setContentOffset:CGPointMake(self.frame.size.width, 0) animated:NO];
 }
 
 #pragma mark - UIScrollView delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    scrollView.userInteractionEnabled = NO;
+//    scrollView.userInteractionEnabled = NO;
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
@@ -88,6 +101,6 @@ const int maximum_content_views = 3;
     if (scrollView.contentOffset.x == scrollView.frame.size.width * 2) {
         [self loadNextMonth];
     }
-    scrollView.userInteractionEnabled = YES;
+//    scrollView.userInteractionEnabled = YES;
 }
 @end

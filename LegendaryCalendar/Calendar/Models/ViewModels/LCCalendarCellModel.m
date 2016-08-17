@@ -102,7 +102,7 @@ typedef NS_ENUM(NSInteger, LCCalendarCellType) {
         
     } else {
         dateAttrDict[NSForegroundColorAttributeName] = COLOR_HEX(0x939393, 1.0);
-        chineseDateAttrDict[NSForegroundColorAttributeName] = COLOR_HEX(0xffa800, 0.7);
+        chineseDateAttrDict[NSForegroundColorAttributeName] = COLOR_HEX(0xcccccc, 0.7);
     }
     self.chineseDateStr = [[NSAttributedString alloc] initWithString:chineseDayStr attributes:chineseDateAttrDict];
     self.dateStr = [[NSAttributedString alloc] initWithString:dayStr attributes:dateAttrDict];

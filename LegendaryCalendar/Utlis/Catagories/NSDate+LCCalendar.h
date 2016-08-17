@@ -21,10 +21,12 @@
 - (NSUInteger )lc_nextMonth;
 - (NSUInteger )lc_currentMonth;
 - (NSUInteger )lc_year;
+- (NSInteger )lc_monthsToMonth:(NSUInteger )month year:(NSUInteger )year;
 
 - (NSDate *)lc_firstDayOfMonth;
 - (NSDate *)lc_lastDayOfMonth;
 - (NSDate *)lc_dateOfMonthsToCurrentMonth:(NSInteger )monthsToCurrentMonth;
+- (NSDate *)lc_dateOfMonth:(NSUInteger )month year:(NSUInteger )year;
 
 - (NSString *)lc_chineseDay;
 

@@ -299,6 +299,17 @@ static int gLunarHolDay[]=
     return comp.year;
 }
 
+- (NSInteger )lc_monthsToMonth:(NSUInteger )month year:(NSUInteger )year{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:self];
+
+    NSInteger years = year - comp.year;
+    NSInteger months = month - comp.month;
+    
+    return months + years * 12;
+}
+
 - (NSDate *)lc_firstDayOfMonth{
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     calendar.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
@@ -322,6 +333,7 @@ static int gLunarHolDay[]=
     
     NSInteger toMonth = monthsToCurrentMonth + comp.month;
     comp.month = toMonth;
+    comp.day = 1;
     
     if (toMonth > 12) {
         comp.month = toMonth % 12;
@@ -335,6 +347,16 @@ static int gLunarHolDay[]=
     return [calendar dateFromComponents:comp];
 }
 
+- (NSDate *)lc_dateOfMonth:(NSUInteger )month year:(NSUInteger )year{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:self];
+    comp.day = 1;
+    comp.year = year;
+    comp.month = month;
+    return [calendar dateFromComponents:comp];
+
+}
 
 - (NSString *)lc_chineseDay{
     NSCalendar *chineseCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierChinese];

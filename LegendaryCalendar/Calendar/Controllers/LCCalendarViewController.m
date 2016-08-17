@@ -8,46 +8,75 @@
 
 #import "LCCalendarViewController.h"
 #import "LCCalendarView.h"
+#import "LCActionPicker.h"
+
+static NSMutableArray  *availableYears;
+static NSMutableArray  *availableMonths;
+
+const NSUInteger    availableStartYear = 1900;
+const NSUInteger    availableEndYear = 2100;
 
 @interface LCCalendarViewController () <UIScrollViewDelegate> {
-    LCCalendarView  *_calendarView;
 }
+
+@property (nonatomic, strong) LCCalendarView    *calendarView;
 
 @end
 
 @implementation LCCalendarViewController
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _calendarView = [[LCCalendarView alloc] initWithFrame:self.view.frame];
-//    _calendarView.delegate = self;
-    [self.view addSubview:_calendarView];
+    [self.view addSubview:self.calendarView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectMonthAndYear:) name:LCCalendarSelectMonthAndYearNotify object:nil];
     
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - UIScrollView delegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+#pragma mark - private 
+- (void)selectMonthAndYear:(NSNotification *)notify{
+    if (!availableYears) {
+        availableYears = [NSMutableArray array];
+        for (NSInteger i = availableStartYear; i <= availableEndYear; i ++) {
+            [availableYears addObject:@(i)];
+        }
+    }
+    if (!availableMonths) {
+        availableMonths = [NSMutableArray array];
+        for (NSInteger i = 1; i <= 12; i ++) {
+            [availableMonths addObject:@(i)];
+        }
+    }
+    NSArray *data = @[
+                      notify.userInfo[LCCalendarSelectMonthAndYearNotifyInfoYear],
+                      notify.userInfo[LCCalendarSelectMonthAndYearNotifyInfoMonth]
+                      ];
     
+    WEAKSELF
+    LCActionPicker *actionPicker = [LCActionPicker actionPickerWithTitle:@"" datas:@[availableYears,availableMonths] comfirmBlock:^(LCActionPicker *picker, NSArray *values) {
+        [picker dismiss:YES];
+        [weakSelf.calendarView loadMonth:[values[1] integerValue] year:[values[0] integerValue]];
+    } cancelBlock:^(LCActionPicker *picker) {
+        [picker dismiss:YES];
+    }];
+    [actionPicker show:YES];
+    [actionPicker setCurrentData:data];
 }
-/*
-#pragma mark - Navigation
+#pragma mark - getter
+- (LCCalendarView *)calendarView{
+    if (!_calendarView) {
+        _calendarView = [[LCCalendarView alloc] initWithFrame:self.view.frame];
+        //    _calendarView.delegate = self;
+    }
+    return _calendarView;
+}
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

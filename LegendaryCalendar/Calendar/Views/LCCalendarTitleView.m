@@ -36,6 +36,8 @@
 }
 
 - (void)updateWithYear:(NSUInteger )year month:(NSUInteger )month{
+    self.year = year;
+    self.month = month;
     self.titleLabel.text = [NSString stringWithFormat:@"%ld年%ld月",year,month];
 }
 

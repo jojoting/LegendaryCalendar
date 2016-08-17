@@ -43,6 +43,14 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
         [strongSelf.collectionView reloadData];
     }];
 }
+
+- (void)titleViewTap:(UITapGestureRecognizer *)tap{
+    [[NSNotificationCenter defaultCenter] postNotificationName:LCCalendarSelectMonthAndYearNotify
+                                                        object:nil
+                                                      userInfo:@{LCCalendarSelectMonthAndYearNotifyInfoYear:@(self.titleView.year),
+                                                                 LCCalendarSelectMonthAndYearNotifyInfoMonth:@(self.titleView.month)
+                                                                 }];
+}
 #pragma mark - init
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -73,6 +81,7 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
         _titleView = [[LCCalendarTitleView alloc] init];
         NSDate *currentDate = [NSDate date];
         [_titleView updateWithYear:[currentDate lc_year] month: [currentDate lc_currentMonth]];
+        [_titleView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleViewTap:)]];
     }
     return _titleView;
 }

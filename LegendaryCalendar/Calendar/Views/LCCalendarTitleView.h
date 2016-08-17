@@ -10,6 +10,9 @@
 
 @interface LCCalendarTitleView : UIView
 
+@property (nonatomic, assign) NSUInteger    year;
+@property (nonatomic, assign) NSUInteger    month;
+
 - (void)updateWithYear:(NSUInteger )year month:(NSUInteger )month;
 
 @end
