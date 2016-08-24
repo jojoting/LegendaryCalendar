@@ -26,7 +26,8 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
 @property (nonatomic, strong) LCCalendarHandler     *handler;
 @end
 
-@implementation LCCalendarContentView
+@implementation LCCalendarContentView{
+}
 
 #pragma mark - public
 
@@ -37,9 +38,10 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
 #pragma mark - private methods
 - (void)updateDataWithMonths:(NSInteger )months{
     WEAKSELF
-    [self.handler updateDataWithMonthsToCurrrentMonth:months CompletionBlock:^(LCCalendarModel *model) {
+    [self.handler updateDataWithMonthsToCurrrentMonth:months CompletionBlock:^(NSDate *date) {
         STRONGSELF
-        [strongSelf.titleView updateWithYear:model.currentYear month:model.currentMonth];
+        [strongSelf.titleView updateWithYear:[date lc_year] month:[date lc_currentMonth]];
+        [strongSelf.handler setCurrentDate:date];
         [strongSelf.collectionView reloadData];
     }];
 }

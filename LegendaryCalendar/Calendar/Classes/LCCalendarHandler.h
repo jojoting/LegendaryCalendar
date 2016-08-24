@@ -12,12 +12,12 @@
 @class LCCalendarCellModel;
 @class LCCalendarModel;
 
-typedef void(^LCUpdateCompletionBlock)(LCCalendarModel *model);
+typedef void(^LCUpdateCompletionBlock)(NSDate *date);
 
 @interface LCCalendarHandler : NSObject <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, copy) NSString                    *cellIdentifier;
 
 - (void)updateDataWithMonthsToCurrrentMonth:(NSInteger )monthsToCurrrentMonth CompletionBlock:(LCUpdateCompletionBlock )block;
-
+- (void)setCurrentDate:(NSDate *)date;
 @end

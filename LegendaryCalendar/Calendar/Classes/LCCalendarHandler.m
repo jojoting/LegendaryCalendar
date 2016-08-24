@@ -9,12 +9,11 @@
 #import "LCCalendarHandler.h"
 #import "LCCalendarCellModel.h"
 #import "LCCalendarCell.h"
-#import "LCCalendarModel.h"
 #import "NSDate+LCCalendar.h"
 
 @implementation LCCalendarHandler{
     NSMutableArray<NSDate *>   *_allDates;
-    LCCalendarModel            *_calendarModel;
+    NSDate  *_currentDate;
 }
 
 #pragma mark - init
@@ -30,25 +29,23 @@
     NSDate *date = [[NSDate date] lc_dateOfMonthsToCurrentMonth:monthsToCurrrentMonth];
     [self createModelWithDate:date completionBlock:block];
 }
+
+- (void)setCurrentDate:(NSDate *)date{
+    if (date) {
+        _currentDate = date;
+    }
+}
 #pragma mark - private
 
 - (void)createModelWithDate:(NSDate *)date completionBlock:(LCUpdateCompletionBlock )block{
-    LCCalendarModel *model = [[LCCalendarModel alloc] init];
-    model.preMonth_days = [date lc_preMonthDates];
-    model.currentMonth_days = [date lc_currentDates];
-    model.nextMonth_days = [date lc_nextMonthDates];
-    model.currentMonth = [date lc_currentMonth];
-    model.currentYear = [date lc_year];
     
     [_allDates removeAllObjects];
-    [_allDates addObjectsFromArray:model.preMonth_days];
-    [_allDates addObjectsFromArray:model.currentMonth_days];
-    [_allDates addObjectsFromArray:model.nextMonth_days];
-    
-    _calendarModel = model;
+    [_allDates addObjectsFromArray:[date lc_preMonthDates]];
+    [_allDates addObjectsFromArray:[date lc_currentDates]];
+    [_allDates addObjectsFromArray:[date lc_nextMonthDates]];
     
     if (block) {
-        block(_calendarModel);
+        block(date);
     }
 }
 
