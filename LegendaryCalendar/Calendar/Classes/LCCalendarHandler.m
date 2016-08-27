@@ -68,7 +68,7 @@
 #pragma mark - UICollectionViewFlowLayout delegate
 ////设置每个item的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(SCREEN_W/7.f, 60);
+    return CGSizeMake(SCREEN_W/7.f, collectionView.frame.size.height / (_allDates.count / 7));
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     return 0;

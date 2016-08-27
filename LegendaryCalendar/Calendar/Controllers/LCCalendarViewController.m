@@ -10,6 +10,8 @@
 #import "LCCalendarView.h"
 #import "LCActionPicker.h"
 
+#define CALENDAR_H   ((SCREEN_H - 20) * 0.6)
+
 static NSMutableArray  *availableYears;
 static NSMutableArray  *availableMonths;
 
@@ -63,7 +65,7 @@ const NSUInteger    availableEndYear = 2100;
     WEAKSELF
     LCActionPicker *actionPicker = [LCActionPicker actionPickerWithTitle:@"选择年月" datas:@[availableYears,availableMonths] comfirmBlock:^(LCActionPicker *picker, NSArray *values) {
         [picker dismiss:YES];
-        [weakSelf.calendarView loadMonth:[values[1] integerValue] year:[values[0] integerValue]];
+        [weakSelf.calendarView loadMonth:[values[1] integerValue] year:[values[0] integerValue] animated:YES];
     } cancelBlock:^(LCActionPicker *picker) {
         [picker dismiss:YES];
     }];
@@ -73,7 +75,7 @@ const NSUInteger    availableEndYear = 2100;
 #pragma mark - getter
 - (LCCalendarView *)calendarView{
     if (!_calendarView) {
-        _calendarView = [[LCCalendarView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_W, SCREEN_H - 20)];
+        _calendarView = [[LCCalendarView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_W, CALENDAR_H)];
         //    _calendarView.delegate = self;
     }
     return _calendarView;

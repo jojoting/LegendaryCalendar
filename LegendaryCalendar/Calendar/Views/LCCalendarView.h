@@ -12,6 +12,6 @@
 
 - (void)loadNextMonth;
 - (void)loadPreMonth;
-- (void)loadMonth:(NSInteger )month year:(NSInteger )year;
+- (void)loadMonth:(NSInteger )month year:(NSInteger )year animated:(BOOL)animated;
 
 @end

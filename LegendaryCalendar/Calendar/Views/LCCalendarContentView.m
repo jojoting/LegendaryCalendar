@@ -7,21 +7,15 @@
 //
 
 #import "LCCalendarContentView.h"
-#import "LCCalendarTitleView.h"
-#import "LCCalendarWeekView.h"
 #import "NSDate+LCCalendar.h"
 #import "LCCalendarHandler.h"
 #import "LCCalendarCell.h"
 #import "LCCalendarModel.h"
 
-const CGFloat _titleViewHeight = 40.f;
-const CGFloat _weekViewHeight = 25.f;
 static NSString * const _cellIdentifier = @"LCCalendarCell";
 
 @interface LCCalendarContentView ()
 
-@property (nonatomic, strong) LCCalendarTitleView   *titleView;
-@property (nonatomic, strong) LCCalendarWeekView    *weekView;
 @property (nonatomic, strong) UICollectionView      *collectionView;
 @property (nonatomic, strong) LCCalendarHandler     *handler;
 @end
@@ -40,19 +34,11 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
     WEAKSELF
     [self.handler updateDataWithMonthsToCurrrentMonth:months CompletionBlock:^(NSDate *date) {
         STRONGSELF
-        [strongSelf.titleView updateWithYear:[date lc_year] month:[date lc_currentMonth]];
         [strongSelf.handler setCurrentDate:date];
         [strongSelf.collectionView reloadData];
     }];
 }
 
-- (void)titleViewTap:(UITapGestureRecognizer *)tap{
-    [[NSNotificationCenter defaultCenter] postNotificationName:LCCalendarSelectMonthAndYearNotify
-                                                        object:nil
-                                                      userInfo:@{LCCalendarSelectMonthAndYearNotifyInfoYear:@(self.titleView.year),
-                                                                 LCCalendarSelectMonthAndYearNotifyInfoMonth:@(self.titleView.month)
-                                                                 }];
-}
 #pragma mark - init
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -64,8 +50,6 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
 
 - (void)initialize{
     self.backgroundColor = [UIColor whiteColor];
-    [self addSubview:self.titleView];
-    [self addSubview:self.weekView];
     [self addSubview:self.collectionView];
     
     [self loadWithMonthsToCurrrentMonth:0];
@@ -73,28 +57,9 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
 
 #pragma mark - layout
 - (void)layoutSubviews{
-    self.titleView.frame = CGRectMake(0, 0, self.frame.size.width, _titleViewHeight);
-    self.weekView.frame = CGRectMake(0, _titleViewHeight, self.frame.size.width, _weekViewHeight);
-    self.collectionView.frame = CGRectMake(0, _titleViewHeight + _weekViewHeight, self.frame.size.width, self.frame.size.height - _weekViewHeight - _titleViewHeight);
+    self.collectionView.frame = self.bounds;
 }
 #pragma mark - getter
-- (LCCalendarTitleView *)titleView{
-    if (!_titleView) {
-        _titleView = [[LCCalendarTitleView alloc] init];
-        NSDate *currentDate = [NSDate date];
-        [_titleView updateWithYear:[currentDate lc_year] month: [currentDate lc_currentMonth]];
-        [_titleView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleViewTap:)]];
-    }
-    return _titleView;
-}
-
-- (LCCalendarWeekView *)weekView{
-    if (!_weekView) {
-        _weekView = [[LCCalendarWeekView alloc] init];
-    }
-    return _weekView;
-}
-
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
             UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];

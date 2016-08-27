@@ -56,14 +56,14 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     CGFloat contentViewHeight = self.contentView.frame.size.height;
-    CGFloat bgViewHeight = self.contentView.frame.size.height * 3/5;
-    CGFloat bgViewWidth = self.contentView.frame.size.width;
-    CGFloat labelMargin = bgViewWidth * 1/3;
-    CGFloat labelWidth = bgViewWidth - labelMargin;
+    CGFloat contentViewWidth = self.contentView.frame.size.width;
     
-    self.bgView.frame = CGRectMake(0, (contentViewHeight - bgViewHeight)/2, bgViewWidth, bgViewHeight);
-    self.dayLabel.frame = CGRectMake(0, 0, labelWidth, bgViewHeight * 3/5);
-    self.chineseDayLabel.frame = CGRectMake(0, self.dayLabel.frame.size.height, labelWidth, bgViewHeight - self.dayLabel.frame.size.height);
+    CGFloat bgViewHeight = self.contentView.frame.size.height * 0.64;
+    CGFloat bgViewWidth = self.contentView.frame.size.width * 0.7;
+    
+    self.bgView.frame = CGRectMake((contentViewWidth - bgViewWidth) / 2, (contentViewHeight - bgViewHeight)/2, bgViewWidth, bgViewHeight);
+    self.dayLabel.frame = CGRectMake(0, 0, bgViewWidth, bgViewHeight * 0.64);
+    self.chineseDayLabel.frame = CGRectMake(0, self.dayLabel.frame.size.height, bgViewWidth, bgViewHeight - self.dayLabel.frame.size.height);
 }
 
 #pragma mark - getter

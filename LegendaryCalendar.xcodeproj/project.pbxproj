@@ -27,6 +27,7 @@
 		B90F52471D607D00006A1511 /* LCCalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52461D607D00006A1511 /* LCCalendarModel.m */; };
 		B90F524A1D60C1B3006A1511 /* LCCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52491D60C1B3006A1511 /* LCCalendarContentView.m */; };
 		B90F52511D60C5C5006A1511 /* LCCalendarHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52501D60C5C5006A1511 /* LCCalendarHandler.m */; };
+		B932AE521D7191BB0058833E /* LCActionPickerToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B932AE511D7191BB0058833E /* LCActionPickerToolBar.m */; };
 		B951FF841D63560C008779AE /* NSDate+LCCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = B951FF821D63560C008779AE /* NSDate+LCCalendar.m */; };
 		B951FF871D635621008779AE /* LCActionPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B951FF861D635621008779AE /* LCActionPicker.m */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,8 @@
 		B90F52491D60C1B3006A1511 /* LCCalendarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarContentView.m; sourceTree = "<group>"; };
 		B90F524F1D60C5C5006A1511 /* LCCalendarHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarHandler.h; sourceTree = "<group>"; };
 		B90F52501D60C5C5006A1511 /* LCCalendarHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarHandler.m; sourceTree = "<group>"; };
+		B932AE501D7191BB0058833E /* LCActionPickerToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionPickerToolBar.h; sourceTree = "<group>"; };
+		B932AE511D7191BB0058833E /* LCActionPickerToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionPickerToolBar.m; sourceTree = "<group>"; };
 		B951FF811D63560C008779AE /* NSDate+LCCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LCCalendar.h"; sourceTree = "<group>"; };
 		B951FF821D63560C008779AE /* NSDate+LCCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LCCalendar.m"; sourceTree = "<group>"; };
 		B951FF851D635621008779AE /* LCActionPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionPicker.h; sourceTree = "<group>"; };
@@ -321,6 +324,8 @@
 			children = (
 				B951FF851D635621008779AE /* LCActionPicker.h */,
 				B951FF861D635621008779AE /* LCActionPicker.m */,
+				B932AE501D7191BB0058833E /* LCActionPickerToolBar.h */,
+				B932AE511D7191BB0058833E /* LCActionPickerToolBar.m */,
 			);
 			path = LCActionPicker;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				B90F52201D5CD1F0006A1511 /* LCCalendarCell.m in Sources */,
 				B90F520A1D5CD07F006A1511 /* LCAppDelegate.m in Sources */,
 				B90F523B1D606DB9006A1511 /* LCCalendarTitleView.m in Sources */,
+				B932AE521D7191BB0058833E /* LCActionPickerToolBar.m in Sources */,
 				B90F52411D606ECB006A1511 /* LCCalendarWeekView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

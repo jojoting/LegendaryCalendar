@@ -7,18 +7,20 @@
 //
 
 #import "LCActionPicker.h"
+#import "LCActionPickerToolBar.h"
 
-const CGFloat   kActionPickerToolBarHeight = 40;
+const CGFloat   kActionPickerToolBarHeight = 45;
 const CGFloat   kActionPickerHeight = 220;
 const CGFloat   kActionPickerAnimationDuration = 0.44;
 const CGFloat   kActionPickerBackgroundViewAlpha = 0.4;
 const CGFloat   kActionPickerRowHeight = 30.f;
+const CGFloat   kActionPickerComponentMargin = 37.f;
 
 @interface LCActionPicker () <UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (nonatomic, strong) UIPickerView  *picker;
-@property (nonatomic, strong) UIToolbar     *toolBar;
-@property (nonatomic, strong) UIView        *bgView;
+@property (nonatomic, strong) UIPickerView                  *picker;
+@property (nonatomic, strong) LCActionPickerToolBar         *toolBar;
+@property (nonatomic, strong) UIView                        *bgView;
 @property (nonatomic, copy  ) LCActionPickerConfirmBlock    confirmBlock;
 @property (nonatomic, copy  ) LCActionPickerCancelBlock     cancelBlock;
 
@@ -135,7 +137,7 @@ const CGFloat   kActionPickerRowHeight = 30.f;
 
 // 每列宽度
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
-    CGFloat width = SCREEN_W / _datas.count;
+    CGFloat width = (SCREEN_W / _datas.count) - kActionPickerComponentMargin;
     return width;
 }
 
@@ -143,15 +145,24 @@ const CGFloat   kActionPickerRowHeight = 30.f;
     return kActionPickerRowHeight;
 }
 
-//- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-//    return [NSString stringWithFormat:@"%@",_datas[component][row]];
-//}
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    CGSize rowSize = [pickerView rowSizeForComponent:component];
+    
     UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(0, 0, pickerView.frame.size.width / _datas.count, kActionPickerRowHeight);
+    label.frame = CGRectMake(0, 0, rowSize.width-kActionPickerComponentMargin/2, rowSize.height);
     label.textAlignment = NSTextAlignmentCenter;
     label.text =  [NSString stringWithFormat:@"%@",_datas[component][row]];
-    label.font = [UIFont systemFontOfSize:12.f];
+    label.font = [UIFont systemFontOfSize:18.f];
+
+    //如果只有两列,那么左列右对齐,右列左对齐
+    if (pickerView.numberOfComponents == 2 && component == 0) {
+        label.textAlignment = NSTextAlignmentRight;
+        label.text =  [NSString stringWithFormat:@"%@%@",_datas[component][row],@"年"];
+    } else if (pickerView.numberOfComponents == 2 && component == 1) {
+        label.textAlignment = NSTextAlignmentLeft;
+        label.text =  [NSString stringWithFormat:@"%@%@",_datas[component][row],@"月"];
+    }
+    
 
 //    label.layer.borderWidth = 1.f;
     return label;
@@ -164,21 +175,13 @@ const CGFloat   kActionPickerRowHeight = 30.f;
 
 #pragma mark - getter
 
-- (UIToolbar *)toolBar{
+- (LCActionPickerToolBar *)toolBar{
     if (!_toolBar) {
-        UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction:)];
-//        leftBarButton.tintColor = MAIN_COLOR;
-        
-        UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(confirmAction:)];
-//        rightBarButton.tintColor = MAIN_COLOR;
-        
-        UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-        UIBarButtonItem *fixedSpaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
-        fixedSpaceItem.width = 10;
-        
-        _toolBar = [[UIToolbar alloc]initWithFrame:CGRectZero];
-        _toolBar.backgroundColor = [UIColor whiteColor];
-        [_toolBar setItems:@[fixedSpaceItem,leftBarButton,spaceItem,rightBarButton,fixedSpaceItem] animated:YES];
+        _toolBar = [[LCActionPickerToolBar alloc]initWithFrame:CGRectZero];
+        _toolBar.backgroundColor = [UIColor clearColor];
+        _toolBar.buttonWidth = 100.f;
+        [_toolBar.leftButton addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_toolBar.rightButton addTarget:self action:@selector(confirmAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _toolBar;
 }
