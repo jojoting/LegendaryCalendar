@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class LCCalendarView;
+@protocol LCCalendarViewDelegate <NSObject>
+
+@optional
+
+@end
+
+
 @interface LCCalendarView : UIView
 
 - (void)loadNextMonth;
 - (void)loadPreMonth;
 - (void)loadMonth:(NSInteger )month year:(NSInteger )year animated:(BOOL)animated;
-
 @end

@@ -12,26 +12,42 @@
 
 typedef NS_ENUM(NSInteger, LCCalendarCellType) {
     LCCalendarCellTypeNormal = 0,
-    LCCalendarCellTypeToday,
-    LCCalendarCellTypeFestivalAndNotToday
+    LCCalendarCellTypeSelect,
+    LCCalendarCellTypeFestivalAndNotSelect
 };
+
 @interface LCCalendarCellModel ()
+
 @end
 
-@implementation LCCalendarCellModel
-
-+ (instancetype)cellModelWithDate:(NSDate *)date month:(NSUInteger )month {
-    return [[self alloc] initWithDate:date month:month];
+@implementation LCCalendarCellModel {
+    BOOL    _selected;
+    NSDate  *_date;
 }
 
-- (instancetype)initWithDate:(NSDate *)date month:(NSUInteger )month {
+#pragma mark - public
++ (instancetype)cellModelWithDate:(NSDate *)date month:(NSUInteger )month selected:(BOOL )selected {
+    return [[self alloc] initWithDate:date month:month selected:selected];
+}
+
+
+- (void)setSelected:(BOOL )selected{
+    _selected = selected;
+    [self setUpDateWithCurrentMonth:_date];
+}
+
+#pragma mark - init
+- (instancetype)initWithDate:(NSDate *)date month:(NSUInteger )month selected:(BOOL )selected{
     self = [super init];
     if (self) {
+        _selected = selected;
+        _date = date;
         [self setUpWithDate:date month:month];
     }
     return self;
 }
 
+#pragma mark - private
 - (void)setUpWithDate:(NSDate *)date month:(NSUInteger )month {
     if ([date lc_isMonth:month]) {
         [self setUpDateWithCurrentMonth:date];
@@ -48,13 +64,12 @@ typedef NS_ENUM(NSInteger, LCCalendarCellType) {
     LCCalendarCellType cellType = LCCalendarCellTypeNormal;
     
     //是否今日
-    BOOL isCurrentDate = [date lc_isCurrentDay];
-    if (isCurrentDate) {
-        cellType = LCCalendarCellTypeToday;
+    if (_selected) {
+        cellType = LCCalendarCellTypeSelect;
     }
     //是否节日、节气或者初一
-    if ([date lc_isFestival] && !isCurrentDate) {
-        cellType = LCCalendarCellTypeFestivalAndNotToday;
+    if ([date lc_isFestival] && !_selected) {
+        cellType = LCCalendarCellTypeFestivalAndNotSelect;
     }
     [self setUpWithCellType:cellType dayStr:[NSString stringWithFormat:@"%ld",[date lc_day]] chineseDayStr:[date lc_chineseDay] isCurrentMonth:YES];
 }
@@ -84,14 +99,14 @@ typedef NS_ENUM(NSInteger, LCCalendarCellType) {
                 chineseDateAttrDict[NSForegroundColorAttributeName] = COLOR_HEX(0xcccccc, 1.0);
             }
                 break;
-            case LCCalendarCellTypeToday:
+            case LCCalendarCellTypeSelect:
             {
                 chineseDateAttrDict[NSForegroundColorAttributeName] = [UIColor whiteColor];
                 dateAttrDict[NSForegroundColorAttributeName] = [UIColor whiteColor];
                 self.backgroundColor = COLOR_HEX(0xffa800, 1.0);
             }
                 break;
-            case LCCalendarCellTypeFestivalAndNotToday:
+            case LCCalendarCellTypeFestivalAndNotSelect:
             {
                 chineseDateAttrDict[NSForegroundColorAttributeName] = COLOR_HEX(0xffa800, 1.0);
             }

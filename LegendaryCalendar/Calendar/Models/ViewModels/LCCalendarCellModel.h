@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSAttributedString    *chineseDateStr;
 @property (nonatomic, strong) UIColor             *backgroundColor;
 
-+ (instancetype)cellModelWithDate:(NSDate *)date month:(NSUInteger )month;
++ (instancetype)cellModelWithDate:(NSDate *)date month:(NSUInteger )month selected:(BOOL)selected;
+- (void)setSelected:(BOOL )selected;
 
 @end

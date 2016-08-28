@@ -17,7 +17,8 @@ typedef void(^LCUpdateCompletionBlock)(NSDate *date);
 @interface LCCalendarHandler : NSObject <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, copy) NSString                    *cellIdentifier;
+@property (nonatomic, strong)NSMutableArray<NSDate *>   *allDates;
 
 - (void)updateDataWithMonthsToCurrrentMonth:(NSInteger )monthsToCurrrentMonth CompletionBlock:(LCUpdateCompletionBlock )block;
-- (void)setCurrentDate:(NSDate *)date;
+
 @end

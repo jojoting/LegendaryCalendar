@@ -29,12 +29,29 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
     [self updateDataWithMonths:monthsToCurrrentMonth];
 }
 
+- (void)selectDate:(NSDate *)date{
+    NSInteger item = 0;
+    for (NSInteger i = 0; i < self.handler.allDates.count; i ++) {
+        if ([self.handler.allDates[i] lc_isDate:date]) {
+            item = i;
+            break;
+        }
+    }
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:0];
+    LCCalendarCell *cell = (LCCalendarCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    if (nil == cell) {
+        [self.collectionView layoutIfNeeded];
+        cell = (LCCalendarCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    }
+    [self.collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionTop];
+    cell.selected = YES;
+}
+
 #pragma mark - private methods
 - (void)updateDataWithMonths:(NSInteger )months{
     WEAKSELF
     [self.handler updateDataWithMonthsToCurrrentMonth:months CompletionBlock:^(NSDate *date) {
         STRONGSELF
-        [strongSelf.handler setCurrentDate:date];
         [strongSelf.collectionView reloadData];
     }];
 }

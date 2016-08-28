@@ -12,8 +12,7 @@
 #import "NSDate+LCCalendar.h"
 
 @implementation LCCalendarHandler{
-    NSMutableArray<NSDate *>   *_allDates;
-    NSDate  *_currentDate;
+    NSRange _currentMonthRange;
 }
 
 #pragma mark - init
@@ -27,22 +26,18 @@
 #pragma mark - public
 - (void)updateDataWithMonthsToCurrrentMonth:(NSInteger )monthsToCurrrentMonth CompletionBlock:(LCUpdateCompletionBlock )block{
     NSDate *date = [[NSDate date] lc_dateOfMonthsToCurrentMonth:monthsToCurrrentMonth];
-    [self createModelWithDate:date completionBlock:block];
+    [self updateDataWithDate:date completionBlock:block];
 }
 
-- (void)setCurrentDate:(NSDate *)date{
-    if (date) {
-        _currentDate = date;
-    }
-}
 #pragma mark - private
 
-- (void)createModelWithDate:(NSDate *)date completionBlock:(LCUpdateCompletionBlock )block{
+- (void)updateDataWithDate:(NSDate *)date completionBlock:(LCUpdateCompletionBlock )block{
     
     [_allDates removeAllObjects];
     [_allDates addObjectsFromArray:[date lc_preMonthDates]];
     [_allDates addObjectsFromArray:[date lc_currentDates]];
     [_allDates addObjectsFromArray:[date lc_nextMonthDates]];
+    _currentMonthRange = NSMakeRange([date lc_preMonthDates].count, [date lc_daysOfMonth]);
     
     if (block) {
         block(date);
@@ -59,12 +54,26 @@
     if (!cell) {
         cell = [[LCCalendarCell alloc] init];
     }
-    LCCalendarCellModel *cellModel = [LCCalendarCellModel cellModelWithDate:_allDates[indexPath.row] month:[_allDates[15] lc_currentMonth]];
+    LCCalendarCellModel *cellModel = [LCCalendarCellModel cellModelWithDate:_allDates[indexPath.row] month:[_allDates[15] lc_currentMonth] selected:cell.selected];
     [cell setCellModel:cellModel];
 
     return cell;
 }
+#pragma mark - UICollectionView delegate
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [[NSNotificationCenter defaultCenter] postNotificationName:LCCalendarSelectDateNotify
+                                                        object:nil
+                                                      userInfo:@{LCCalendarSelectDateNotifyInfoDate : _allDates[indexPath.row]}];
+}
+
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (NSLocationInRange(indexPath.row, _currentMonthRange)) {
+        return YES;
+    }
+    return NO;
+}
 #pragma mark - UICollectionViewFlowLayout delegate
 ////设置每个item的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,7 +86,4 @@
     return 0
     ;
 }
-
-
-
 @end

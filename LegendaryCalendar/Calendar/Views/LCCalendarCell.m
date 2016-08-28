@@ -19,7 +19,9 @@
 
 @end
 
-@implementation LCCalendarCell
+@implementation LCCalendarCell {
+    
+}
 
 #pragma mark - class methods
 
@@ -50,6 +52,7 @@
     self.bgView.backgroundColor = _cellModel.backgroundColor;
     self.dayLabel.attributedText = _cellModel.dateStr;
     self.chineseDayLabel.attributedText = _cellModel.chineseDateStr;
+
     [self layoutIfNeeded];
 }
 
@@ -88,4 +91,12 @@
     }
     return _chineseDayLabel;
 }
+
+#pragma mark - setter
+- (void)setSelected:(BOOL)selected{
+    [_cellModel setSelected:selected];
+    [self updateUI];
+}
+
+
 @end

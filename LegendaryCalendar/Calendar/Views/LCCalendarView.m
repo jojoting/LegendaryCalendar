@@ -10,7 +10,6 @@
 #import "LCCalendarContentView.h"
 #import "LCCalendarTitleView.h"
 #import "LCCalendarWeekView.h"
-
 #import "NSDate+LCCalendar.h"
 
 const CGFloat _titleViewHeight = 40.f;
@@ -74,11 +73,13 @@ const int maximum_content_views = 5;
         [_contentViews addObject:contentView];
     }
     
-    _currentDisplayDate = [[NSDate date] lc_dateOfMonthsToCurrentMonth:((LCCalendarView *)_contentViews[2]).tag];
-    
     [self addSubview:self.titleView];
     [self addSubview:self.weekView];
     [self addSubview:self.scrollView];
+    [self layoutIfNeeded];
+    
+    _currentDisplayDate = [NSDate date];
+    [((LCCalendarContentView *)_contentViews[2]) selectDate:_currentDisplayDate];
 }
 
 #pragma mark - layout
@@ -111,7 +112,8 @@ const int maximum_content_views = 5;
     } else {
         [_scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width * 2, 0) animated:NO];
     }
-    _currentDisplayDate = [[NSDate date] lc_dateOfMonthsToCurrentMonth:((LCCalendarView *)_contentViews[2]).tag];
+    _currentDisplayDate = [[NSDate date] lc_dateOfMonthsToCurrentMonth:((LCCalendarContentView *)_contentViews[2]).tag];
+    [((LCCalendarContentView *)_contentViews[2]) selectDate:_currentDisplayDate];
     [self.titleView updateWithYear:[_currentDisplayDate lc_year] month:[_currentDisplayDate lc_currentMonth]];
 }
 

@@ -454,4 +454,16 @@ static int gLunarHolDay[]=
     }
     return NO;
 }
+
+- (BOOL)lc_isDate:(NSDate *)date{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone localTimeZone];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:self];
+    NSDateComponents *currentComp = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:date];
+    if (currentComp.year == comp.year && currentComp.month == comp.month && currentComp.day == comp.day) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

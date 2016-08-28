@@ -26,5 +26,7 @@
 #define LCCalendarSelectMonthAndYearNotify              @"LCCalendarSelectMonthAndYearNotify"
 #define LCCalendarSelectMonthAndYearNotifyInfoYear      @"LCCalendarSelectMonthAndYearNotifyInfoYear"
 #define LCCalendarSelectMonthAndYearNotifyInfoMonth     @"LCCalendarSelectMonthAndYearNotifyInfoMonth"
+#define LCCalendarSelectDateNotify                      @"LCCalendarSelectDateNotify"
+#define LCCalendarSelectDateNotifyInfoDate              @"LCCalendarSelectDateNotifyInfoDate"
 
 #endif /* LCPrefix_pch */

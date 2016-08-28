@@ -34,5 +34,6 @@
 - (BOOL)lc_isCurrentMonth;
 - (BOOL)lc_isMonth:(NSUInteger )month;
 - (BOOL)lc_isCurrentDay;
+- (BOOL)lc_isDate:(NSDate *)date;
 
 @end

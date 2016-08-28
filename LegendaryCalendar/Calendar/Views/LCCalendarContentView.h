@@ -11,5 +11,6 @@
 @interface LCCalendarContentView : UIView
 
 - (void)loadWithMonthsToCurrrentMonth:(NSInteger )monthsToCurrrentMonth;
+- (void)selectDate:(NSDate *)date;
 
 @end
