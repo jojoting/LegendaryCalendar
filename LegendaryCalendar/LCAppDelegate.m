@@ -13,6 +13,10 @@
 #import "LCCalendarViewController.h"
 #import "NSDate+LCCalendar.h"
 
+#import "LCPlistWrapper.h"
+#import "LCMemoModel.h"
+#import "LCMemoService.h"
+
 @interface LCAppDelegate () 
 
 @end
@@ -31,6 +35,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = calendarViewController;
     [self.window makeKeyAndVisible];
+    
+
+
 }
 
 

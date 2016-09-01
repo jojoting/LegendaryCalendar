@@ -1,14 +1,14 @@
 //
-//  LCScrollView.m
+//  LCMemoContentView.m
 //  LegendaryCalendar
 //
-//  Created by jojoting on 16/8/14.
+//  Created by jojoting on 16/9/1.
 //  Copyright © 2016年 jojoting. All rights reserved.
 //
 
-#import "LCScrollView.h"
+#import "LCMemoContentView.h"
 
-@implementation LCScrollView
+@implementation LCMemoContentView
 
 /*
 // Only override drawRect: if you perform custom drawing.

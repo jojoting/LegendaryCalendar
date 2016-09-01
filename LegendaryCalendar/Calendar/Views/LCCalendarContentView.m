@@ -45,6 +45,10 @@ static NSString * const _cellIdentifier = @"LCCalendarCell";
     }
     [self.collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionTop];
     cell.selected = YES;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:LCCalendarSelectDateNotify
+                                                        object:nil
+                                                      userInfo:@{LCCalendarSelectDateNotifyInfoDate : date}];
 }
 
 #pragma mark - private methods

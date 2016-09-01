@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B90F51971D5B7150006A1511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F51961D5B7150006A1511 /* main.m */; };
 		B90F51A21D5B7150006A1511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B90F51A11D5B7150006A1511 /* Assets.xcassets */; };
-		B90F51A51D5B7150006A1511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90F51A31D5B7150006A1511 /* LaunchScreen.storyboard */; };
 		B90F51B01D5B7150006A1511 /* LegendaryCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F51AF1D5B7150006A1511 /* LegendaryCalendarTests.m */; };
 		B90F51BB1D5B7150006A1511 /* LegendaryCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F51BA1D5B7150006A1511 /* LegendaryCalendarUITests.m */; };
 		B90F52051D5CD078006A1511 /* LCRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F51FF1D5CD078006A1511 /* LCRootNavigationController.m */; };
@@ -19,7 +18,6 @@
 		B90F52201D5CD1F0006A1511 /* LCCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F521F1D5CD1F0006A1511 /* LCCalendarCell.m */; };
 		B90F522A1D5CD40C006A1511 /* LCCalendarCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52291D5CD40C006A1511 /* LCCalendarCellModel.m */; };
 		B90F522D1D5E48CE006A1511 /* NSDate+LCCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F522C1D5E48CE006A1511 /* NSDate+LCCalendarTests.m */; };
-		B90F52351D5FA629006A1511 /* LCScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52341D5FA629006A1511 /* LCScrollView.m */; };
 		B90F52381D606D95006A1511 /* LCCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52371D606D95006A1511 /* LCCalendarViewController.m */; };
 		B90F523B1D606DB9006A1511 /* LCCalendarTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F523A1D606DB9006A1511 /* LCCalendarTitleView.m */; };
 		B90F52411D606ECB006A1511 /* LCCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52401D606ECB006A1511 /* LCCalendarWeekView.m */; };
@@ -27,6 +25,12 @@
 		B90F52471D607D00006A1511 /* LCCalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52461D607D00006A1511 /* LCCalendarModel.m */; };
 		B90F524A1D60C1B3006A1511 /* LCCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52491D60C1B3006A1511 /* LCCalendarContentView.m */; };
 		B90F52511D60C5C5006A1511 /* LCCalendarHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F52501D60C5C5006A1511 /* LCCalendarHandler.m */; };
+		B925CA601D75CEEE00E71486 /* LCPlistWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B925CA5F1D75CEEE00E71486 /* LCPlistWrapper.m */; };
+		B925CA621D75D37E00E71486 /* LCPlistWrapperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B925CA611D75D37E00E71486 /* LCPlistWrapperTest.m */; };
+		B925CA681D75D67500E71486 /* LCMemoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B925CA671D75D67500E71486 /* LCMemoModel.m */; };
+		B925CA6F1D75DE1200E71486 /* LCMemoService.m in Sources */ = {isa = PBXBuildFile; fileRef = B925CA6E1D75DE1200E71486 /* LCMemoService.m */; };
+		B925CA721D78726300E71486 /* LCMemoContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B925CA711D78726300E71486 /* LCMemoContentView.m */; };
+		B925CA791D7872FE00E71486 /* LCMemoContentCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B925CA781D7872FE00E71486 /* LCMemoContentCellModel.m */; };
 		B932AE521D7191BB0058833E /* LCActionPickerToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B932AE511D7191BB0058833E /* LCActionPickerToolBar.m */; };
 		B951FF841D63560C008779AE /* NSDate+LCCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = B951FF821D63560C008779AE /* NSDate+LCCalendar.m */; };
 		B951FF871D635621008779AE /* LCActionPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B951FF861D635621008779AE /* LCActionPicker.m */; };
@@ -53,7 +57,6 @@
 		B90F51921D5B7150006A1511 /* LegendaryCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegendaryCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90F51961D5B7150006A1511 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B90F51A11D5B7150006A1511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B90F51A41D5B7150006A1511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B90F51A61D5B7150006A1511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B90F51AB1D5B7150006A1511 /* LegendaryCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LegendaryCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90F51AF1D5B7150006A1511 /* LegendaryCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LegendaryCalendarTests.m; sourceTree = "<group>"; };
@@ -67,16 +70,14 @@
 		B90F52011D5CD078006A1511 /* LCRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRootTabBarController.m; sourceTree = "<group>"; };
 		B90F52021D5CD078006A1511 /* LCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRootViewController.h; sourceTree = "<group>"; };
 		B90F52031D5CD078006A1511 /* LCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRootViewController.m; sourceTree = "<group>"; };
-		B90F52081D5CD07F006A1511 /* LCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCAppDelegate.h; sourceTree = "<group>"; };
-		B90F52091D5CD07F006A1511 /* LCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCAppDelegate.m; sourceTree = "<group>"; };
+		B90F52081D5CD07F006A1511 /* LCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCAppDelegate.h; path = ../LCAppDelegate.h; sourceTree = "<group>"; };
+		B90F52091D5CD07F006A1511 /* LCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCAppDelegate.m; path = ../LCAppDelegate.m; sourceTree = "<group>"; };
 		B90F521E1D5CD1F0006A1511 /* LCCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarCell.h; sourceTree = "<group>"; };
 		B90F521F1D5CD1F0006A1511 /* LCCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarCell.m; sourceTree = "<group>"; };
 		B90F52281D5CD40C006A1511 /* LCCalendarCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarCellModel.h; sourceTree = "<group>"; };
 		B90F52291D5CD40C006A1511 /* LCCalendarCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarCellModel.m; sourceTree = "<group>"; };
 		B90F522C1D5E48CE006A1511 /* NSDate+LCCalendarTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LCCalendarTests.m"; sourceTree = "<group>"; };
 		B90F52311D5F0C0F006A1511 /* LCPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPrefix.pch; sourceTree = "<group>"; };
-		B90F52331D5FA629006A1511 /* LCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCScrollView.h; sourceTree = "<group>"; };
-		B90F52341D5FA629006A1511 /* LCScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCScrollView.m; sourceTree = "<group>"; };
 		B90F52361D606D95006A1511 /* LCCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarViewController.h; sourceTree = "<group>"; };
 		B90F52371D606D95006A1511 /* LCCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarViewController.m; sourceTree = "<group>"; };
 		B90F52391D606DB9006A1511 /* LCCalendarTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarTitleView.h; sourceTree = "<group>"; };
@@ -91,6 +92,17 @@
 		B90F52491D60C1B3006A1511 /* LCCalendarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarContentView.m; sourceTree = "<group>"; };
 		B90F524F1D60C5C5006A1511 /* LCCalendarHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCalendarHandler.h; sourceTree = "<group>"; };
 		B90F52501D60C5C5006A1511 /* LCCalendarHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCalendarHandler.m; sourceTree = "<group>"; };
+		B925CA5E1D75CEEE00E71486 /* LCPlistWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPlistWrapper.h; sourceTree = "<group>"; };
+		B925CA5F1D75CEEE00E71486 /* LCPlistWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPlistWrapper.m; sourceTree = "<group>"; };
+		B925CA611D75D37E00E71486 /* LCPlistWrapperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPlistWrapperTest.m; sourceTree = "<group>"; };
+		B925CA661D75D67500E71486 /* LCMemoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemoModel.h; sourceTree = "<group>"; };
+		B925CA671D75D67500E71486 /* LCMemoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemoModel.m; sourceTree = "<group>"; };
+		B925CA6D1D75DE1200E71486 /* LCMemoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemoService.h; sourceTree = "<group>"; };
+		B925CA6E1D75DE1200E71486 /* LCMemoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemoService.m; sourceTree = "<group>"; };
+		B925CA701D78726300E71486 /* LCMemoContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemoContentView.h; sourceTree = "<group>"; };
+		B925CA711D78726300E71486 /* LCMemoContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemoContentView.m; sourceTree = "<group>"; };
+		B925CA771D7872FE00E71486 /* LCMemoContentCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemoContentCellModel.h; sourceTree = "<group>"; };
+		B925CA781D7872FE00E71486 /* LCMemoContentCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemoContentCellModel.m; sourceTree = "<group>"; };
 		B932AE501D7191BB0058833E /* LCActionPickerToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionPickerToolBar.h; sourceTree = "<group>"; };
 		B932AE511D7191BB0058833E /* LCActionPickerToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionPickerToolBar.m; sourceTree = "<group>"; };
 		B951FF811D63560C008779AE /* NSDate+LCCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LCCalendar.h"; sourceTree = "<group>"; };
@@ -147,17 +159,13 @@
 		B90F51941D5B7150006A1511 /* LegendaryCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				B925CA631D75D63D00E71486 /* Memo */,
 				B951FF7F1D63560C008779AE /* Utlis */,
 				B90F522E1D5F0B7F006A1511 /* Public */,
-				B90F52081D5CD07F006A1511 /* LCAppDelegate.h */,
-				B90F52091D5CD07F006A1511 /* LCAppDelegate.m */,
 				B90F51F01D5CCF71006A1511 /* Root */,
 				B90F51EF1D5CCF22006A1511 /* Calendar */,
 				B90F51A11D5B7150006A1511 /* Assets.xcassets */,
-				B90F51A31D5B7150006A1511 /* LaunchScreen.storyboard */,
-				B90F51A61D5B7150006A1511 /* Info.plist */,
 				B90F51951D5B7150006A1511 /* Supporting Files */,
-				B90F52311D5F0C0F006A1511 /* LCPrefix.pch */,
 			);
 			path = LegendaryCalendar;
 			sourceTree = "<group>";
@@ -165,6 +173,8 @@
 		B90F51951D5B7150006A1511 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B90F51A61D5B7150006A1511 /* Info.plist */,
+				B90F52311D5F0C0F006A1511 /* LCPrefix.pch */,
 				B90F51961D5B7150006A1511 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -176,6 +186,7 @@
 				B90F51AF1D5B7150006A1511 /* LegendaryCalendarTests.m */,
 				B90F51B11D5B7150006A1511 /* Info.plist */,
 				B90F522C1D5E48CE006A1511 /* NSDate+LCCalendarTests.m */,
+				B925CA611D75D37E00E71486 /* LCPlistWrapperTest.m */,
 			);
 			path = LegendaryCalendarTests;
 			sourceTree = "<group>";
@@ -278,18 +289,10 @@
 		B90F522E1D5F0B7F006A1511 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				B90F52321D5FA614006A1511 /* LCScrollView */,
+				B90F52081D5CD07F006A1511 /* LCAppDelegate.h */,
+				B90F52091D5CD07F006A1511 /* LCAppDelegate.m */,
 			);
 			path = Public;
-			sourceTree = "<group>";
-		};
-		B90F52321D5FA614006A1511 /* LCScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				B90F52331D5FA629006A1511 /* LCScrollView.h */,
-				B90F52341D5FA629006A1511 /* LCScrollView.m */,
-			);
-			path = LCScrollView;
 			sourceTree = "<group>";
 		};
 		B90F524B1D60C38A006A1511 /* Classes */ = {
@@ -301,11 +304,60 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		B925CA631D75D63D00E71486 /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				B925CA731D78729700E71486 /* ViewModels */,
+				B925CA691D75D7B000E71486 /* Classes */,
+				B925CA641D75D66700E71486 /* Models */,
+				B925CA651D75D66700E71486 /* Views */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
+		B925CA641D75D66700E71486 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B925CA661D75D67500E71486 /* LCMemoModel.h */,
+				B925CA671D75D67500E71486 /* LCMemoModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B925CA651D75D66700E71486 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B925CA701D78726300E71486 /* LCMemoContentView.h */,
+				B925CA711D78726300E71486 /* LCMemoContentView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B925CA691D75D7B000E71486 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B925CA6D1D75DE1200E71486 /* LCMemoService.h */,
+				B925CA6E1D75DE1200E71486 /* LCMemoService.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B925CA731D78729700E71486 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B925CA771D7872FE00E71486 /* LCMemoContentCellModel.h */,
+				B925CA781D7872FE00E71486 /* LCMemoContentCellModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		B951FF7F1D63560C008779AE /* Utlis */ = {
 			isa = PBXGroup;
 			children = (
 				B951FF801D63560C008779AE /* Catagories */,
 				B951FF831D63560C008779AE /* LCActionPicker */,
+				B925CA5E1D75CEEE00E71486 /* LCPlistWrapper.h */,
+				B925CA5F1D75CEEE00E71486 /* LCPlistWrapper.m */,
 			);
 			path = Utlis;
 			sourceTree = "<group>";
@@ -434,7 +486,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B90F51A51D5B7150006A1511 /* LaunchScreen.storyboard in Resources */,
 				B90F51A21D5B7150006A1511 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,18 +513,22 @@
 			files = (
 				B90F51971D5B7150006A1511 /* main.m in Sources */,
 				B951FF841D63560C008779AE /* NSDate+LCCalendar.m in Sources */,
+				B925CA681D75D67500E71486 /* LCMemoModel.m in Sources */,
 				B90F52381D606D95006A1511 /* LCCalendarViewController.m in Sources */,
 				B90F52061D5CD078006A1511 /* LCRootTabBarController.m in Sources */,
-				B90F52351D5FA629006A1511 /* LCScrollView.m in Sources */,
 				B90F52441D607CEF006A1511 /* LCCalendarView.m in Sources */,
+				B925CA721D78726300E71486 /* LCMemoContentView.m in Sources */,
 				B90F52511D60C5C5006A1511 /* LCCalendarHandler.m in Sources */,
 				B951FF871D635621008779AE /* LCActionPicker.m in Sources */,
 				B90F524A1D60C1B3006A1511 /* LCCalendarContentView.m in Sources */,
+				B925CA791D7872FE00E71486 /* LCMemoContentCellModel.m in Sources */,
 				B90F52071D5CD078006A1511 /* LCRootViewController.m in Sources */,
+				B925CA6F1D75DE1200E71486 /* LCMemoService.m in Sources */,
 				B90F52471D607D00006A1511 /* LCCalendarModel.m in Sources */,
 				B90F522A1D5CD40C006A1511 /* LCCalendarCellModel.m in Sources */,
 				B90F52051D5CD078006A1511 /* LCRootNavigationController.m in Sources */,
 				B90F52201D5CD1F0006A1511 /* LCCalendarCell.m in Sources */,
+				B925CA601D75CEEE00E71486 /* LCPlistWrapper.m in Sources */,
 				B90F520A1D5CD07F006A1511 /* LCAppDelegate.m in Sources */,
 				B90F523B1D606DB9006A1511 /* LCCalendarTitleView.m in Sources */,
 				B932AE521D7191BB0058833E /* LCActionPickerToolBar.m in Sources */,
@@ -487,6 +542,7 @@
 			files = (
 				B90F51B01D5B7150006A1511 /* LegendaryCalendarTests.m in Sources */,
 				B90F522D1D5E48CE006A1511 /* NSDate+LCCalendarTests.m in Sources */,
+				B925CA621D75D37E00E71486 /* LCPlistWrapperTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,17 +568,6 @@
 			targetProxy = B90F51B71D5B7150006A1511 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B90F51A31D5B7150006A1511 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B90F51A41D5B7150006A1511 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B90F51BD1D5B7150006A1511 /* Debug */ = {

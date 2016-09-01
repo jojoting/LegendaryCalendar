@@ -9,6 +9,8 @@
 #import "LCCalendarViewController.h"
 #import "LCCalendarView.h"
 #import "LCActionPicker.h"
+#import "LCMemoService.h"
+#import "LCMemoModel.h"
 
 #define CALENDAR_H   ((SCREEN_H - 20) * 0.6)
 
@@ -35,7 +37,9 @@ const NSUInteger    availableEndYear = 2100;
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.calendarView];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectMonthAndYear:) name:LCCalendarSelectMonthAndYearNotify object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectMonthAndYear:) name:LCCalendarSelectMonthAndYearNotify object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectDate:) name:LCCalendarSelectDateNotify object:nil];
     
 }
 
@@ -44,7 +48,7 @@ const NSUInteger    availableEndYear = 2100;
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - private 
-- (void)selectMonthAndYear:(NSNotification *)notify{
+- (void)didSelectMonthAndYear:(NSNotification *)notify{
     if (!availableYears) {
         availableYears = [NSMutableArray array];
         for (NSInteger i = availableStartYear; i <= availableEndYear; i ++) {
@@ -71,6 +75,18 @@ const NSUInteger    availableEndYear = 2100;
     }];
     [actionPicker show:YES];
     [actionPicker setCurrentData:data];
+}
+
+- (void)didSelectDate:(NSNotification *)notify{
+    NSDate *date = (NSDate *)notify.userInfo[LCCalendarSelectDateNotifyInfoDate];
+    
+    NSArray *array = [LCMemoService modelsWithDate:date];
+    
+#if DEBUG
+    NSLog(@"select date:%@",date);
+    NSLog(@"select memos:%@",array);
+#endif
+    
 }
 #pragma mark - getter
 - (LCCalendarView *)calendarView{
