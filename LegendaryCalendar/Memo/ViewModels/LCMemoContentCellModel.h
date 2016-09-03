@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class LCMemoModel;
 @interface LCMemoContentCellModel : NSObject
 
-@property (nonatomic, copy) NSAttributedString  *titleString;
-@property (nonatomic, copy) NSAttributedString  *detailString;
-@property (nonatomic, copy) NSAttributedString  *levelString;
-@property (nonatomic, copy) NSAttributedString  *describeString;
+@property (nonatomic, copy) NSMutableAttributedString  *titleString;
+@property (nonatomic, copy) NSMutableAttributedString  *detailString;
+@property (nonatomic, copy) NSMutableAttributedString  *levelString;
+@property (nonatomic, copy) NSMutableAttributedString  *describeString;
 
 + (instancetype)cellModelWithModel:(LCMemoModel *)model;
 

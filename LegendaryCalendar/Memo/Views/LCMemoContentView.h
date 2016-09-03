@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LCMemoContentView : UIView
+@interface LCMemoContentView : UITableView
 
 @end

@@ -36,8 +36,6 @@
     self.window.rootViewController = calendarViewController;
     [self.window makeKeyAndVisible];
     
-
-
 }
 
 

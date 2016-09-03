@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53DCABEA1A7A5E334D52AD44 /* libPods-LegendaryCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A7E1B069C37D426DFD2798 /* libPods-LegendaryCalendar.a */; };
 		B90F51971D5B7150006A1511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F51961D5B7150006A1511 /* main.m */; };
 		B90F51A21D5B7150006A1511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B90F51A11D5B7150006A1511 /* Assets.xcassets */; };
 		B90F51B01D5B7150006A1511 /* LegendaryCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F51AF1D5B7150006A1511 /* LegendaryCalendarTests.m */; };
@@ -34,6 +35,10 @@
 		B932AE521D7191BB0058833E /* LCActionPickerToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B932AE511D7191BB0058833E /* LCActionPickerToolBar.m */; };
 		B951FF841D63560C008779AE /* NSDate+LCCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = B951FF821D63560C008779AE /* NSDate+LCCalendar.m */; };
 		B951FF871D635621008779AE /* LCActionPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B951FF861D635621008779AE /* LCActionPicker.m */; };
+		B965C0911D7A7A410070A369 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B965C0901D7A7A410070A369 /* Podfile */; };
+		B965C0941D7A81220070A369 /* LCMemoContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B965C0931D7A81220070A369 /* LCMemoContentCell.m */; };
+		B965C0991D7AA95E0070A369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B965C0971D7AA95E0070A369 /* LaunchScreen.storyboard */; };
+		B965C09C1D7AACB70070A369 /* LCMemoCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B965C09B1D7AACB70070A369 /* LCMemoCellLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43A7E1B069C37D426DFD2798 /* libPods-LegendaryCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LegendaryCalendar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD345A7200E2F817178E7CEB /* Pods-LegendaryCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegendaryCalendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LegendaryCalendar/Pods-LegendaryCalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		AD64CB5C4E77C190E147BBC7 /* Pods-LegendaryCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegendaryCalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-LegendaryCalendar/Pods-LegendaryCalendar.release.xcconfig"; sourceTree = "<group>"; };
 		B90F51921D5B7150006A1511 /* LegendaryCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegendaryCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90F51961D5B7150006A1511 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B90F51A11D5B7150006A1511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +117,12 @@
 		B951FF821D63560C008779AE /* NSDate+LCCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LCCalendar.m"; sourceTree = "<group>"; };
 		B951FF851D635621008779AE /* LCActionPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionPicker.h; sourceTree = "<group>"; };
 		B951FF861D635621008779AE /* LCActionPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionPicker.m; sourceTree = "<group>"; };
+		B965C0901D7A7A410070A369 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		B965C0921D7A81220070A369 /* LCMemoContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemoContentCell.h; sourceTree = "<group>"; };
+		B965C0931D7A81220070A369 /* LCMemoContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemoContentCell.m; sourceTree = "<group>"; };
+		B965C0981D7AA95E0070A369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B965C09A1D7AACB70070A369 /* LCMemoCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemoCellLayout.h; sourceTree = "<group>"; };
+		B965C09B1D7AACB70070A369 /* LCMemoCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemoCellLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53DCABEA1A7A5E334D52AD44 /* libPods-LegendaryCalendar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,13 +151,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35E12852DD6D2A12AED6308C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43A7E1B069C37D426DFD2798 /* libPods-LegendaryCalendar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D7FBE3977B43789AB96FA70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD345A7200E2F817178E7CEB /* Pods-LegendaryCalendar.debug.xcconfig */,
+				AD64CB5C4E77C190E147BBC7 /* Pods-LegendaryCalendar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B90F51891D5B7150006A1511 = {
 			isa = PBXGroup;
 			children = (
+				B965C0901D7A7A410070A369 /* Podfile */,
 				B90F51941D5B7150006A1511 /* LegendaryCalendar */,
 				B90F51AE1D5B7150006A1511 /* LegendaryCalendarTests */,
 				B90F51B91D5B7150006A1511 /* LegendaryCalendarUITests */,
 				B90F51931D5B7150006A1511 /* Products */,
+				8D7FBE3977B43789AB96FA70 /* Pods */,
+				35E12852DD6D2A12AED6308C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +208,7 @@
 		B90F51951D5B7150006A1511 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B965C0971D7AA95E0070A369 /* LaunchScreen.storyboard */,
 				B90F51A61D5B7150006A1511 /* Info.plist */,
 				B90F52311D5F0C0F006A1511 /* LCPrefix.pch */,
 				B90F51961D5B7150006A1511 /* main.m */,
@@ -329,6 +365,8 @@
 			children = (
 				B925CA701D78726300E71486 /* LCMemoContentView.h */,
 				B925CA711D78726300E71486 /* LCMemoContentView.m */,
+				B965C0921D7A81220070A369 /* LCMemoContentCell.h */,
+				B965C0931D7A81220070A369 /* LCMemoContentCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -336,6 +374,8 @@
 		B925CA691D75D7B000E71486 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B965C09A1D7AACB70070A369 /* LCMemoCellLayout.h */,
+				B965C09B1D7AACB70070A369 /* LCMemoCellLayout.m */,
 				B925CA6D1D75DE1200E71486 /* LCMemoService.h */,
 				B925CA6E1D75DE1200E71486 /* LCMemoService.m */,
 			);
@@ -389,9 +429,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B90F51BF1D5B7150006A1511 /* Build configuration list for PBXNativeTarget "LegendaryCalendar" */;
 			buildPhases = (
+				BE092E4175FB434AAC20A294 /* [CP] Check Pods Manifest.lock */,
 				B90F518E1D5B7150006A1511 /* Sources */,
 				B90F518F1D5B7150006A1511 /* Frameworks */,
 				B90F51901D5B7150006A1511 /* Resources */,
+				61995E94E1CA4E9315C3F51B /* [CP] Embed Pods Frameworks */,
+				62E242482265953831EF589D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -486,6 +529,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B965C0991D7AA95E0070A369 /* LaunchScreen.storyboard in Resources */,
+				B965C0911D7A7A410070A369 /* Podfile in Resources */,
 				B90F51A21D5B7150006A1511 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,18 +551,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		61995E94E1CA4E9315C3F51B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LegendaryCalendar/Pods-LegendaryCalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62E242482265953831EF589D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LegendaryCalendar/Pods-LegendaryCalendar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE092E4175FB434AAC20A294 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B90F518E1D5B7150006A1511 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B90F51971D5B7150006A1511 /* main.m in Sources */,
+				B965C0941D7A81220070A369 /* LCMemoContentCell.m in Sources */,
 				B951FF841D63560C008779AE /* NSDate+LCCalendar.m in Sources */,
 				B925CA681D75D67500E71486 /* LCMemoModel.m in Sources */,
 				B90F52381D606D95006A1511 /* LCCalendarViewController.m in Sources */,
 				B90F52061D5CD078006A1511 /* LCRootTabBarController.m in Sources */,
 				B90F52441D607CEF006A1511 /* LCCalendarView.m in Sources */,
 				B925CA721D78726300E71486 /* LCMemoContentView.m in Sources */,
+				B965C09C1D7AACB70070A369 /* LCMemoCellLayout.m in Sources */,
 				B90F52511D60C5C5006A1511 /* LCCalendarHandler.m in Sources */,
 				B951FF871D635621008779AE /* LCActionPicker.m in Sources */,
 				B90F524A1D60C1B3006A1511 /* LCCalendarContentView.m in Sources */,
@@ -568,6 +663,17 @@
 			targetProxy = B90F51B71D5B7150006A1511 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B965C0971D7AA95E0070A369 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B965C0981D7AA95E0070A369 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B90F51BD1D5B7150006A1511 /* Debug */ = {
@@ -654,6 +760,7 @@
 		};
 		B90F51C01D5B7150006A1511 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD345A7200E2F817178E7CEB /* Pods-LegendaryCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -670,6 +777,7 @@
 		};
 		B90F51C11D5B7150006A1511 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD64CB5C4E77C190E147BBC7 /* Pods-LegendaryCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
