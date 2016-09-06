@@ -13,6 +13,7 @@
 #import "LCCalendarView.h"
 #import "LCActionPicker.h"
 #import "LCMemoContentView.h"
+
 #import "LCMemoContentCellModel.h"
 #import "LCMemoContentCell.h"
 
@@ -46,6 +47,8 @@ static NSString * const contentCellIdentifier = @"contentCell";
     NSArray<LCMemoModel *>                      *_memoModels;
     NSMutableArray<LCMemoCellLayout *>          *_cellLayouts;
     NSMutableArray<LCMemoContentCellModel *>    *_cellModels;
+    
+    NSInteger _debug;
 }
 
 #pragma mark - life cycle
@@ -67,6 +70,23 @@ static NSString * const contentCellIdentifier = @"contentCell";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectMonthAndYear:) name:LCCalendarSelectMonthAndYearNotify object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectDate:) name:LCCalendarSelectDateNotify object:nil];
     
+    if ([LCMemoService modelsWithDate:[NSDate date]].count == 0) {
+        LCMemoModel *model = [[LCMemoModel alloc] init];
+        model.memoName = @"测试测试标题";
+        model.memoDetail = @"测试测试测试测试副标题";
+        model.memoLevel = LCMemoLevelHigh;
+        model.memoDescribe = @"测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述测试描述";
+        [LCMemoService writeModel:model toFileWithDate:[NSDate date]];
+        [LCMemoService writeModel:model toFileWithDate:[NSDate date]];
+        [LCMemoService writeModel:model toFileWithDate:[NSDate date]];
+        [LCMemoService writeModel:model toFileWithDate:[NSDate date]];
+        
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.calendarView selectDate:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,6 +101,18 @@ static NSString * const contentCellIdentifier = @"contentCell";
     [cell configCellWithCellModel:cellModel layout:layout];
 }
 
+- (void)showActionPickerWithDatas:(NSArray *)datas {
+    WEAKSELF
+    LCActionPicker *actionPicker = [LCActionPicker actionPickerWithTitle:@"选择年月" datas:@[availableYears,availableMonths] comfirmBlock:^(LCActionPicker *picker, NSArray *values) {
+        [picker dismiss:YES];
+        [weakSelf.calendarView loadMonth:[values[1] integerValue] year:[values[0] integerValue] animated:YES];
+    } cancelBlock:^(LCActionPicker *picker) {
+        [picker dismiss:YES];
+    }];
+    [actionPicker show:YES];
+    [actionPicker setCurrentData:datas];
+
+}
 #pragma mark - notify method
 - (void)didSelectMonthAndYear:(NSNotification *)notify{
     if (!availableYears) {
@@ -95,20 +127,11 @@ static NSString * const contentCellIdentifier = @"contentCell";
             [availableMonths addObject:@(i)];
         }
     }
-    NSArray *data = @[
+    NSArray *datas = @[
                       notify.userInfo[LCCalendarSelectMonthAndYearNotifyInfoYear],
                       notify.userInfo[LCCalendarSelectMonthAndYearNotifyInfoMonth]
                       ];
-    
-    WEAKSELF
-    LCActionPicker *actionPicker = [LCActionPicker actionPickerWithTitle:@"选择年月" datas:@[availableYears,availableMonths] comfirmBlock:^(LCActionPicker *picker, NSArray *values) {
-        [picker dismiss:YES];
-        [weakSelf.calendarView loadMonth:[values[1] integerValue] year:[values[0] integerValue] animated:YES];
-    } cancelBlock:^(LCActionPicker *picker) {
-        [picker dismiss:YES];
-    }];
-    [actionPicker show:YES];
-    [actionPicker setCurrentData:data];
+    [self showActionPickerWithDatas:datas];
 }
 
 - (void)didSelectDate:(NSNotification *)notify{

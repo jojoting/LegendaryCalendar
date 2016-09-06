@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B90F51911D5B7150006A1511"
-               BuildableName = "LegendaryCalendar.app"
-               BlueprintName = "LegendaryCalendar"
+               BlueprintIdentifier = "B965C09D1D7DD8350070A369"
+               BuildableName = "LegendaryCalendar copy.app"
+               BlueprintName = "LegendaryCalendar copy"
                ReferencedContainer = "container:LegendaryCalendar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,33 +28,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B90F51AA1D5B7150006A1511"
-               BuildableName = "LegendaryCalendarTests.xctest"
-               BlueprintName = "LegendaryCalendarTests"
-               ReferencedContainer = "container:LegendaryCalendar.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B90F51B51D5B7150006A1511"
-               BuildableName = "LegendaryCalendarUITests.xctest"
-               BlueprintName = "LegendaryCalendarUITests"
-               ReferencedContainer = "container:LegendaryCalendar.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B90F51911D5B7150006A1511"
-            BuildableName = "LegendaryCalendar.app"
-            BlueprintName = "LegendaryCalendar"
+            BlueprintIdentifier = "B965C09D1D7DD8350070A369"
+            BuildableName = "LegendaryCalendar copy.app"
+            BlueprintName = "LegendaryCalendar copy"
             ReferencedContainer = "container:LegendaryCalendar.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B90F51911D5B7150006A1511"
-            BuildableName = "LegendaryCalendar.app"
-            BlueprintName = "LegendaryCalendar"
+            BlueprintIdentifier = "B965C09D1D7DD8350070A369"
+            BuildableName = "LegendaryCalendar copy.app"
+            BlueprintName = "LegendaryCalendar copy"
             ReferencedContainer = "container:LegendaryCalendar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -94,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B90F51911D5B7150006A1511"
-            BuildableName = "LegendaryCalendar.app"
-            BlueprintName = "LegendaryCalendar"
+            BlueprintIdentifier = "B965C09D1D7DD8350070A369"
+            BuildableName = "LegendaryCalendar copy.app"
+            BlueprintName = "LegendaryCalendar copy"
             ReferencedContainer = "container:LegendaryCalendar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -105,7 +85,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "AdHoc"
+      buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

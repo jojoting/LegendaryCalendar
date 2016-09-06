@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53DCABEA1A7A5E334D52AD44 /* libPods-LegendaryCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A7E1B069C37D426DFD2798 /* libPods-LegendaryCalendar.a */; };
 		B90F51971D5B7150006A1511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F51961D5B7150006A1511 /* main.m */; };
 		B90F51A21D5B7150006A1511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B90F51A11D5B7150006A1511 /* Assets.xcassets */; };
 		B90F51B01D5B7150006A1511 /* LegendaryCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B90F51AF1D5B7150006A1511 /* LegendaryCalendarTests.m */; };
@@ -123,6 +122,7 @@
 		B965C0981D7AA95E0070A369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B965C09A1D7AACB70070A369 /* LCMemoCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemoCellLayout.h; sourceTree = "<group>"; };
 		B965C09B1D7AACB70070A369 /* LCMemoCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemoCellLayout.m; sourceTree = "<group>"; };
+		B965C0C41D7DD8350070A369 /* LegendaryCalendar copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LegendaryCalendar copy-Info.plist"; path = "/Users/jojoting/Desktop/LegendaryCalendar/LegendaryCalendar copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53DCABEA1A7A5E334D52AD44 /* libPods-LegendaryCalendar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +177,7 @@
 				B90F51931D5B7150006A1511 /* Products */,
 				8D7FBE3977B43789AB96FA70 /* Pods */,
 				35E12852DD6D2A12AED6308C /* Frameworks */,
+				B965C0C41D7DD8350070A369 /* LegendaryCalendar copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -492,7 +492,7 @@
 				TargetAttributes = {
 					B90F51911D5B7150006A1511 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = EL267FJ9ZW;
+						DevelopmentTeam = Y7M4K3AU56;
 					};
 					B90F51AA1D5B7150006A1511 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -716,6 +716,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "a41cadd5-51bd-4a1b-85b9-02e60a99d4cb";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -753,6 +754,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "a41cadd5-51bd-4a1b-85b9-02e60a99d4cb";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -769,9 +771,9 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LegendaryCalendar/LCPrefix.pch";
 				INFOPLIST_FILE = LegendaryCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jojo.LegendaryCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.LClite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a41cadd5-51bd-4a1b-85b9-02e60a99d4cb";
 			};
 			name = Debug;
 		};
@@ -786,9 +788,9 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LegendaryCalendar/LCPrefix.pch";
 				INFOPLIST_FILE = LegendaryCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jojo.LegendaryCalendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.LClite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a41cadd5-51bd-4a1b-85b9-02e60a99d4cb";
 			};
 			name = Release;
 		};
@@ -838,6 +840,86 @@
 			};
 			name = Release;
 		};
+		B965C0C51D7DD8490070A369 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Guang Zhou Wu Xiang Digital Technology Co., Ltd. (Y7M4K3AU56)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guang Zhou Wu Xiang Digital Technology Co., Ltd. (Y7M4K3AU56)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "a41cadd5-51bd-4a1b-85b9-02e60a99d4cb";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AdHoc;
+		};
+		B965C0C61D7DD8490070A369 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD64CB5C4E77C190E147BBC7 /* Pods-LegendaryCalendar.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Guang Zhou Wu Xiang Digital Technology Co., Ltd. (Y7M4K3AU56)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guang Zhou Wu Xiang Digital Technology Co., Ltd. (Y7M4K3AU56)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LegendaryCalendar/LCPrefix.pch";
+				INFOPLIST_FILE = LegendaryCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jojo.LClite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a41cadd5-51bd-4a1b-85b9-02e60a99d4cb";
+			};
+			name = AdHoc;
+		};
+		B965C0C71D7DD8490070A369 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LegendaryCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jojo.LegendaryCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LegendaryCalendar.app/LegendaryCalendar";
+			};
+			name = AdHoc;
+		};
+		B965C0C81D7DD8490070A369 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LegendaryCalendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jojo.LegendaryCalendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LegendaryCalendar;
+			};
+			name = AdHoc;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -846,6 +928,7 @@
 			buildConfigurations = (
 				B90F51BD1D5B7150006A1511 /* Debug */,
 				B90F51BE1D5B7150006A1511 /* Release */,
+				B965C0C51D7DD8490070A369 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -855,6 +938,7 @@
 			buildConfigurations = (
 				B90F51C01D5B7150006A1511 /* Debug */,
 				B90F51C11D5B7150006A1511 /* Release */,
+				B965C0C61D7DD8490070A369 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -864,6 +948,7 @@
 			buildConfigurations = (
 				B90F51C31D5B7150006A1511 /* Debug */,
 				B90F51C41D5B7150006A1511 /* Release */,
+				B965C0C71D7DD8490070A369 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -873,6 +958,7 @@
 			buildConfigurations = (
 				B90F51C61D5B7150006A1511 /* Debug */,
 				B90F51C71D5B7150006A1511 /* Release */,
+				B965C0C81D7DD8490070A369 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

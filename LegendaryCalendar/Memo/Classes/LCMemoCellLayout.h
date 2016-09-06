@@ -19,6 +19,7 @@
 @property (nonatomic, assign) CGFloat describeLabelHeight;
 @property (nonatomic, assign) CGFloat labelWidth;
 @property (nonatomic, assign) CGFloat labelMargin;
+@property (nonatomic, assign) CGFloat labelLeftMargin;
 
 @property (nonatomic, assign) CGFloat cellHeight;
 

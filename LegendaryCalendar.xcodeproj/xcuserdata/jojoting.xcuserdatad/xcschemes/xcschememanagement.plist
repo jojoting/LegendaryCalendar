@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>LegendaryCalendar copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>LegendaryCalendar.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>B90F51B51D5B7150006A1511</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B965C09D1D7DD8350070A369</key>
 		<dict>
 			<key>primary</key>
 			<true/>

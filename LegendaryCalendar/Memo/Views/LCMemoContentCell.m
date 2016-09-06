@@ -56,10 +56,10 @@
 - (void)layoutSubviews{
     CGFloat labelWidth = _layout.labelWidth;
     
-    self.memoTitleLabel.frame = CGRectMake(0, 0, labelWidth, _layout.titleLabelHeight);
-    self.memoDetailLabel.frame = CGRectMake(0, self.memoTitleLabel.frame.size.height + _layout.labelMargin, labelWidth, _layout.detailLabelHeight);
-    self.memoLevelLabel.frame = CGRectMake(0, self.memoTitleLabel.frame.size.height + self.memoDetailLabel.frame.size.height + _layout.labelMargin * 2, labelWidth, _layout.levelLabelHeight);
-    self.memoDescribeLabel.frame = CGRectMake(0, self.memoTitleLabel.frame.size.height + self.memoDetailLabel.frame.size.height + self.memoLevelLabel.frame.size.height + _layout.labelMargin * 3, labelWidth, _layout.describeLabelHeight);
+    self.memoTitleLabel.frame = CGRectMake(_layout.labelLeftMargin, 0, labelWidth, _layout.titleLabelHeight);
+    self.memoDetailLabel.frame = CGRectMake(_layout.labelLeftMargin, self.memoTitleLabel.frame.size.height + _layout.labelMargin, labelWidth, _layout.detailLabelHeight);
+    self.memoLevelLabel.frame = CGRectMake(_layout.labelLeftMargin, self.memoTitleLabel.frame.size.height + self.memoDetailLabel.frame.size.height + _layout.labelMargin * 2, labelWidth, _layout.levelLabelHeight);
+    self.memoDescribeLabel.frame = CGRectMake(_layout.labelLeftMargin, self.memoTitleLabel.frame.size.height + self.memoDetailLabel.frame.size.height + self.memoLevelLabel.frame.size.height + _layout.labelMargin * 3, labelWidth, _layout.describeLabelHeight);
     
 }
 
@@ -67,8 +67,8 @@
     UILabel *label = [[UILabel alloc] init];
     label.textAlignment = NSTextAlignmentLeft;
     label.numberOfLines = 0;
-    label.lineBreakMode = NSLineBreakByWordWrapping;
-
+    label.lineBreakMode = NSLineBreakByTruncatingTail;
+    
     return label;
 }
 #pragma mark - lazy

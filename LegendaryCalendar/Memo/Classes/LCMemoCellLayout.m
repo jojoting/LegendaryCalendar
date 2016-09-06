@@ -25,6 +25,7 @@
 - (void)layoutWithCellModel:(LCMemoContentCellModel *)cellModel {
     _labelWidth = SCREEN_W - 40;
     _labelMargin = 10;
+    _labelLeftMargin = 20;
     
     _titleLabelHeight = [self labelHeightWithAttributedString:cellModel.titleString];
     _detailLabelHeight = [self labelHeightWithAttributedString:cellModel.detailString];

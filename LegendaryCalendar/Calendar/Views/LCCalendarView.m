@@ -28,10 +28,9 @@ const int maximum_content_views = 5;
 
 @implementation LCCalendarView {
     NSDate                  *_currentDisplayDate;
-    NSMutableArray          *_contentViews;
     CGFloat                  _contentViewWidth;
     CGFloat                  _contentViewHeight;
-
+    NSMutableArray<LCCalendarContentView *> *_contentViews;
 }
 
 #pragma mark - public methods
@@ -45,6 +44,10 @@ const int maximum_content_views = 5;
 - (void)loadMonth:(NSInteger )month year:(NSInteger )year animated:(BOOL)animated{
     NSInteger monthsToCurrentDisplayDate = [_currentDisplayDate lc_monthsToMonth:month year:year];
     [self reloadWithMontnsToCurrentMonths:monthsToCurrentDisplayDate animated:animated];
+}
+
+- (void)selectDate:(NSDate *)date {
+    [_contentViews[2] selectDate:date];
 }
 
 #pragma mark - init
